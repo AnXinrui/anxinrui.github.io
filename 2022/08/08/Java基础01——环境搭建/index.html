@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Serendipity">
+    <meta name="keywords" content="Java基础01——环境搭建, Serendipity">
     <meta name="description" content="If you&#39;re going through hell, keep going!">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 安同学</title>
+    <title>Java基础01——环境搭建 | 安同学</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">Java基础01——环境搭建</h1>
                 </div>
             </div>
         </div>
@@ -407,9 +407,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -442,19 +446,39 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="Java基础01"><a href="#Java基础01" class="headerlink" title="Java基础01"></a>Java基础01</h1><h3 id="常用cmd命令"><a href="#常用cmd命令" class="headerlink" title="常用cmd命令"></a>常用cmd命令</h3><ul>
+<li>盘符名称+冒号：盘符切换</li>
+<li>dir：查看当前路径内容(包括隐藏内容)</li>
+<li>cd：进入当前目录</li>
+<li>cd.. ：回退上一级目录</li>
+<li>cd目录1\目录2... ：进入多级目录</li>
+<li>cd\ :回退到盘符目录</li>
+<li>cls：清屏</li>
+<li>exit：推出命令行提示符窗口</li>
+</ul>
+<hr>
+<h3 id="Java-开发环境配置"><a href="#Java-开发环境配置" class="headerlink" title="Java 开发环境配置"></a>Java 开发环境配置</h3><h5 id="JDK下载与安装"><a href="#JDK下载与安装" class="headerlink" title="JDK下载与安装"></a>JDK下载与安装</h5><p>在官网选择合适版本下载即可，官网：</p>
+<p>建议路径设置成比较好找的，后面配置<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F&spm=1001.2101.3001.7020">环境变量</a>要用到。</p>
+<h5 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h5><p>右击此电脑–属性–高级系统设置–环境变量<br>然后点击系统变量栏下面的新建，变量名必须填JAVA_HOME，变量值是你jdk的安装路径。 </p>
+<p>点击确定后，双击系统变量那一栏下的Path，双击新建。输入<code>%Java_Home\bin%</code>.<br>点击确定，环境变量就配置完成了。</p>
+<p> 让我们来检测一下是否配置成功，按win+r，输入cmd，确认。</p>
+<p>然后再命令框里面输入java -version，一定要有空格和-。</p>
+<h5 id="解读JDK的安装目录："><a href="#解读JDK的安装目录：" class="headerlink" title="解读JDK的安装目录："></a>解读JDK的安装目录：</h5><ul>
+<li>bin：该路径下存放了各种工具命令。其中比较重要的有Javac（用来把Java文件编译为class文件）和Java（运行dai’ma</li>
+<li>conf：该路径下存放了相关配置文件</li>
+<li>include：该路径下存放了一些平台特定的头文件</li>
+<li>jmods：该路径下存放了各种模块</li>
+<li>legal：该路径下存放了各种模块的授权文档</li>
+<li>lib：该路径下存放了工具的一些补充JAR包</li>
+</ul>
+<h3 id="流行Java开发工具"><a href="#流行Java开发工具" class="headerlink" title="流行Java开发工具"></a>流行Java开发工具</h3><ul>
+<li>Eclipse（推荐）:另一个免费开源的java IDE，<a target="_blank" rel="noopener" href="http://www.eclipse.org/downloads/packages/">下载地址</a><br>选择 Eclipse IDE for Java Developers：</li>
+</ul>
+<ul>
+<li>JetBrains 的 IDEA， 现在很多人开始使用了，功能很强大，<a target="_blank" rel="noopener" href="https://www.jetbrains.com/idea/download/">下载地址</a></li>
+<li>VSCode : VSCode（全称：Visual Studio Code）是一款由微软开发且跨平台的免费源代码编辑器。安装教程： <a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/vscode-tutorial.html">https://www.runoob.com/w3cnote/vscode-tutorial.html</a></li>
+<li>Netbeans:开源免费的java IDE，<a target="_blank" rel="noopener" href="http://www.netbeans.org/index.html">下载地址</a></li>
+</ul>
 
                 
             </div>
@@ -481,7 +505,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://anxinui.github.io/2022/08/08/hello-world/">http://anxinui.github.io/2022/08/08/hello-world/</a>
+                    <a href="http://anxinui.github.io/2022/08/08/Java%E5%9F%BA%E7%A1%8001%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">http://anxinui.github.io/2022/08/08/Java%E5%9F%BA%E7%A1%8001%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -518,7 +542,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -690,13 +718,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2022/08/08/Java%E5%9F%BA%E7%A1%8001%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+                <a href="/2022/08/08/Java%E5%9F%BA%E7%A1%8002%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Java基础01——环境搭建">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Java基础02——基础语法">
                         
-                        <span class="card-title">Java基础01——环境搭建</span>
+                        <span class="card-title">Java基础02——基础语法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -732,7 +760,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2022/08/08/hello-world/">
@@ -762,7 +790,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

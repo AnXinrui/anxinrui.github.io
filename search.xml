@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Java基础02——基础语法</title>
+      <link href="/2022/08/08/Java%E5%9F%BA%E7%A1%8002%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+      <url>/2022/08/08/Java%E5%9F%BA%E7%A1%8002%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Java基础02——基础语法"><a href="#Java基础02——基础语法" class="headerlink" title="Java基础02——基础语法"></a>Java基础02——基础语法</h1><p>@[toc]</p><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><ul><li>单行注释（Ctrl + /)</li></ul><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//注释内容，只能写一行</span></code></pre><ul><li>多行注释 (Ctrl +Shift + /)</li></ul><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*      注释内容1    注释内容2*/</span></code></pre><ul><li>文档注释（一般用于类和方法）</li></ul><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**    注释内容*/</span></code></pre><h3 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h3><table><thead><tr><th align="left">分类</th><th>写法</th><th>说明</th></tr></thead><tbody><tr><td align="left">整数</td><td>66，-44</td><td></td></tr><tr><td align="left">小数</td><td>3.13</td><td></td></tr><tr><td align="left">字符</td><td>‘A’,’0’,’我’</td><td>单引号，仅一个字符</td></tr><tr><td align="left">字符串</td><td>“hello”,”哈哈哈”</td><td>双引号，内容可有可无</td></tr><tr><td align="left">布尔值</td><td>true,false</td><td>仅两个值</td></tr><tr><td align="left">空值</td><td>值是：null</td><td>一个特殊的值，空值</td></tr></tbody></table><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul><li><strong>定义</strong>：用来存储一个数据的内存区域（可以理解成盒子），且里面存储的数据可以变化。</li><li><strong>变量定义的格式：</strong></li></ul><blockquote><p>数据类型   变量名称  =  初始值；</p><p>double money = 6.0;</p></blockquote><ul><li><strong>注意事项：</strong></li></ul><p>⚫ 什么类型变量存储什么类型的字面值。</p><p>⚫ 同一个范围变量名不能重复 </p><p>⚫ 变量在使用时要有初始值 </p><p>⚫ 变量存在访问范围</p><h3 id="二进制——数据的存储形式"><a href="#二进制——数据的存储形式" class="headerlink" title="二进制——数据的存储形式"></a>二进制——数据的存储形式</h3><blockquote><p>计算机底层都是一些数字电路(理解成开关)，用开表示0、关表示1，这些01的形式就是二进制。 </p></blockquote><blockquote><p> 数据在计算机底层都是采用二进制存储的，字节是数据在计算机中存储的最基本单位</p></blockquote><blockquote><p>int age1 = 3; 实际上 ，数据在内存中存储的有效二进制位是：</p><p>11 int age2 = 19; 实际上，数据在内存中存储的有效二进制位是：10011</p></blockquote><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ul><li>数据类型就是约束变量存储数据的形式。</li><li>基本数据类型</li></ul><ul><li>随便写一个整数字面值，默认是int类型的，如果希望随便写一个整数默认是long型的必须在数据后加L或者l表示。 </li><li>随便写一个小数字面值，默认是double类型的，如果希望这个小数是float类型的，必须在数据后加F或者f表示。</li></ul><h3 id="关键字和标识符"><a href="#关键字和标识符" class="headerlink" title="关键字和标识符"></a>关键字和标识符</h3><h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><ul><li><p>Java自己保留的一些单词，作为特殊功能的，例如：public、class、byte、short、int、long、double…  </p></li><li><p>我们不能用来作为类名或者是变量名称，否则报错。 </p></li><li><p>注意：关键字很多，不用刻意去记。</p></li></ul><h4 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h4><ul><li>取名字的规则，数字，字母，下划线，美元符等组成。 </li><li>数字不能开头，不能是关键字</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java基础01——环境搭建</title>
+      <link href="/2022/08/08/Java%E5%9F%BA%E7%A1%8001%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+      <url>/2022/08/08/Java%E5%9F%BA%E7%A1%8001%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Java基础01"><a href="#Java基础01" class="headerlink" title="Java基础01"></a>Java基础01</h1><h3 id="常用cmd命令"><a href="#常用cmd命令" class="headerlink" title="常用cmd命令"></a>常用cmd命令</h3><ul><li>盘符名称+冒号：盘符切换</li><li>dir：查看当前路径内容(包括隐藏内容)</li><li>cd：进入当前目录</li><li>cd.. ：回退上一级目录</li><li>cd目录1\目录2... ：进入多级目录</li><li>cd\ :回退到盘符目录</li><li>cls：清屏</li><li>exit：推出命令行提示符窗口</li></ul><hr><h3 id="Java-开发环境配置"><a href="#Java-开发环境配置" class="headerlink" title="Java 开发环境配置"></a>Java 开发环境配置</h3><h5 id="JDK下载与安装"><a href="#JDK下载与安装" class="headerlink" title="JDK下载与安装"></a>JDK下载与安装</h5><p>在官网选择合适版本下载即可，官网：</p><p>建议路径设置成比较好找的，后面配置<a href="https://so.csdn.net/so/search?q=%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F&spm=1001.2101.3001.7020">环境变量</a>要用到。</p><h5 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h5><p>右击此电脑–属性–高级系统设置–环境变量<br>然后点击系统变量栏下面的新建，变量名必须填JAVA_HOME，变量值是你jdk的安装路径。 </p><p>点击确定后，双击系统变量那一栏下的Path，双击新建。输入<code>%Java_Home\bin%</code>.<br>点击确定，环境变量就配置完成了。</p><p> 让我们来检测一下是否配置成功，按win+r，输入cmd，确认。</p><p>然后再命令框里面输入java -version，一定要有空格和-。</p><h5 id="解读JDK的安装目录："><a href="#解读JDK的安装目录：" class="headerlink" title="解读JDK的安装目录："></a>解读JDK的安装目录：</h5><ul><li>bin：该路径下存放了各种工具命令。其中比较重要的有Javac（用来把Java文件编译为class文件）和Java（运行dai’ma</li><li>conf：该路径下存放了相关配置文件</li><li>include：该路径下存放了一些平台特定的头文件</li><li>jmods：该路径下存放了各种模块</li><li>legal：该路径下存放了各种模块的授权文档</li><li>lib：该路径下存放了工具的一些补充JAR包</li></ul><h3 id="流行Java开发工具"><a href="#流行Java开发工具" class="headerlink" title="流行Java开发工具"></a>流行Java开发工具</h3><ul><li>Eclipse（推荐）:另一个免费开源的java IDE，<a href="http://www.eclipse.org/downloads/packages/">下载地址</a><br>选择 Eclipse IDE for Java Developers：</li></ul><ul><li>JetBrains 的 IDEA， 现在很多人开始使用了，功能很强大，<a href="https://www.jetbrains.com/idea/download/">下载地址</a></li><li>VSCode : VSCode（全称：Visual Studio Code）是一款由微软开发且跨平台的免费源代码编辑器。安装教程： <a href="https://www.runoob.com/w3cnote/vscode-tutorial.html">https://www.runoob.com/w3cnote/vscode-tutorial.html</a></li><li>Netbeans:开源免费的java IDE，<a href="http://www.netbeans.org/index.html">下载地址</a></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2022/08/08/hello-world/"/>
+      <url>/2022/08/08/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
