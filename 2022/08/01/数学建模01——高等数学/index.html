@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Serendipity">
+    <meta name="keywords" content="数学建模01——高等数学, Serendipity">
     <meta name="description" content="和光同尘，与时舒卷">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 安同学</title>
+    <title>数学建模01——高等数学 | 安同学</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">数学建模01——高等数学</h1>
                 </div>
             </div>
         </div>
@@ -407,9 +407,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">
+                                <span class="chip bg-color">数学建模</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -421,7 +425,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-08-08
+                    2022-08-01
                 </div>
                 
 
@@ -442,19 +446,42 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="数学建模01——高等数学"><a href="#数学建模01——高等数学" class="headerlink" title="数学建模01——高等数学"></a>数学建模01——高等数学</h1><h3 id="一、sympy"><a href="#一、sympy" class="headerlink" title="一、sympy"></a>一、sympy</h3><p>1.导入sympy</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sympy <span class="token keyword">import</span> <span class="token operator">*</span>
+</code></pre>
+<p>2.求导</p>
+<pre class=" language-python"><code class="language-python">f<span class="token operator">=</span>diff<span class="token punctuation">(</span>y<span class="token punctuation">,</span>x<span class="token punctuation">)</span>
+</code></pre>
+<p>3.求驻点</p>
+<pre class=" language-python"><code class="language-python">stag <span class="token operator">=</span> solve<span class="token punctuation">(</span>diff<span class="token punctuation">(</span>y<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span>
+</code></pre>
+<p>4.转换（sub）</p>
+<pre class=" language-python"><code class="language-python">func2<span class="token punctuation">.</span> <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;variable:substitute&amp;#125;</span>
+</code></pre>
+<p>5.求浮点数</p>
+<pre class=" language-python"><code class="language-python">func2<span class="token punctuation">.</span>evalf<span class="token punctuation">(</span>subs <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;n:5000&amp;#125;)</span>
+</code></pre>
+<hr>
+<h3 id="二、最优化问题——微分初步知识及梯度下降算法"><a href="#二、最优化问题——微分初步知识及梯度下降算法" class="headerlink" title="二、最优化问题——微分初步知识及梯度下降算法"></a>二、最优化问题——微分初步知识及梯度下降算法</h3><p>**命题1: <em><em>[一阶最优化必要条件] 设 $f(x)$ 是 $\mathbf{R}$ 上的可导函数，若 $x^</em>$ 是 $f$ 的极值点，则<br>$$<br>f’(x^</em>)=0 \tag{1.2}<br>$$<br>其中 $f’$ 是 $f$ 的一阶导数</p>
+<p><strong>命题2</strong>:[二阶最优化必要条件] 设 $f(x)$ 是 $\mathbf{R}$ 上的可导函数，若 $x^*$ 是 $f$ 的极值点，设$f(x)$在 $\mathbf{R}$ 上二阶可导，若 $x^*$ 是 $f$ 的极大（小）值点，则<br>$$<br>f’(x^*)=0 \<br>f’’(x^*)\leqslant0 ( f’’(x^*) \geqslant 0 ) \tag{1.3}<br>$$<br>其中 $f’’$ 是 $f$ 的二阶导数。</p>
+<p><strong>命题3</strong>:[二阶最优化充分条件]设 $f(x)$ 是 $\mathbf{R}$ 上的二阶可导函数，若 $x^*$ 满足<br>$$<br>f’(x^*)=0 \<br>f’’(x^*)&lt;0 (f’’(x^*)&gt;0)<br>$$<br>则 $x^*$ 是 $f$ 的极大$($小$)$值点。</p>
+<p><strong>定义1:[Hesse 矩阵]</strong> 设 $f:\mathbf{R}^n\to R$ （将n维实向量空间映射到实数域上）是 $n$ 元函数，$x_i,i=1,2,\cdots,n$ 是变量。</p>
+<p>记 $f$ 对变量 $x_i$ 方向的偏导数为 $f’_i$，称所有偏导数组成的列向量 $[f_1’,f_2’,\cdots,f_n’]^T := \nabla f$ 为函数 $f$ 的全导数，亦称<strong>梯度</strong>。</p>
+<p>记偏导数 $f_i’$ 对变量 $x_j$ 方向的二阶偏导数为 $f’’<em>{ij}$ 称 $n\times n$ 方阵<br>$$<br>\begin{bmatrix}<br>f’’</em>{11} &amp; f’’<em>{12} &amp; \cdots &amp; f’’</em>{1n} \<br>f’’<em>{21} &amp; f’’</em>{22}&amp;\cdots &amp; f’’<em>{1n} \<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>f’’</em>{n1} &amp; f’’<em>{n2} &amp; \cdots &amp; f’’</em>{nn} \<br>\end{bmatrix}<br>:= \nabla^2 f<br>$$<br>为函数 $f$ 的<strong> Hesse 矩阵</strong>。</p>
+<p><em>显然</em></p>
+<p><img src="https://s2.loli.net/2022/08/11/zRm2SxfKBTcpFtC.png"></p>
+<p><strong>命题4：[多元无约束问题一阶最优化必要条件]</strong></p>
+<p>设 $f(x)$ 是 $\mathbf{R}^n$ 上的 $n$ 元可导函数，若 $x^*$ 是 $f$ 的极值点，则<br>$$<br>\nabla f(x^*)=0 \tag{1.7}<br>$$<br>其中 $\nabla f$ 是 $f$ 的梯度。</p>
+<p><strong>命题5：[多元无约束问题二阶最优化必要条件]</strong></p>
+<p>设 $f(x)$ 是 $\mathbf{R}^n$ 上的 $n$ 元二阶可导函数，若 $x^*$ 是 $f$ 的极大（小）值点，则<br>$$<br>\nabla f(x^*)=0 \<br>\nabla^2 f(x^*)\text{是半负定} ( \nabla^2 f(x^*)\text{是半正定} ) \tag{1.8}<br>$$<br>其中 $\nabla^2 f$ 是 $f$ 的 Hesse 矩阵。</p>
+<p><strong>命题6：[多元无约束问题二阶最优化充分条件]</strong></p>
+<p>设 $f(x)$ 是 $\mathbf{R}^n$ 上的 $n$ 元二阶可导函数，若 $x^*$ 满足<br>$$<br>\nabla f(x^*)=0 \<br>\nabla^2 f(x^*) \ \text{负定} \ (\nabla^2 f(x^*)\ \text{正定})<br>$$<br>则 $x^*$ 是 $f$ 的极大（小）值点。</p>
+<p>代数学的知识告诉我们，<strong>验证一个对称矩阵是否正（负）定只需要 check 其所有特征值是否大（小）于0。</strong></p>
+<hr>
+<h3 id="三、数据处理问题——插值"><a href="#三、数据处理问题——插值" class="headerlink" title="三、数据处理问题——插值"></a>三、数据处理问题——插值</h3><p><strong>定义1：[插值]</strong></p>
+<p>设 $(x_i,y_i)$ 是 $\mathbf{R}^2$ 上的 $n$ 个点，$f:\mathbf{R} \to \mathbf{R}$ 是一条满足 $y_i=f(x_i)$ 的函数曲线，则 $f$ 称为 $(x_i,y_i)$ 的<strong>插值曲线</strong>，其中$i=1,2,\cdots,n$。</p>
+<p><strong>定义2：</strong><br>设 $(x_i,y_i)$ 是 $\mathbf{R}^2$ 上的 $n$ 个点，其中$i=1,2,\cdots,n$，其三次样条插值函数为<br>$$<br>f_i(t) = s_{i,0} + s_{i,1}t + s_{i,2}t^2 + s_{i,3}t^3 \quad i=1,2,\cdots, n-1<br>$$<br>满足<br>$$<br>\begin{aligned}<br>f_{i}(x_i) &amp; =y_i,f_{n-1}(x_{n})=y_{n} \quad i=1,2,\cdots,n-1 \<br>f_{i}(x_{i+1}) &amp;= y_{i+1}(x_{i+1}) \quad i=1,2,\cdots,n-2 \<br>f_{i}’(x_{i+1}) &amp;= y_{i+1}’(x_{i+1}) \quad i=1,2,\cdots,n-2 \<br>f_{i}’’(x_{i+1})&amp;=y_{i+1}’’(x_{i+1}) \quad i=1,2,\cdots,n-2<br>\end{aligned}<br>$$<br> <img src="https://s2.loli.net/2022/08/11/ZTAYtebU6q4sCvL.png"></p>
+<p><strong> 定义4：[第一型曲线积分的计算方式]</strong><br>设平面曲线 $L$ 的参数方程为 $x=x(t),z=z(t),t\in [a,b],$ $\rho(x,z)$ 为定义在 $L$ 上的连续函数，则<br>$$<br>\int_{L}\rho(x,z) ds = \int_{a}^b \rho(x(t),z(t)) \sqrt{(x’(t))^2+(z’(t))^2} dt<br>$$</p>
 
                 
             </div>
@@ -481,7 +508,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://anxinui.github.io/2022/08/08/hello-world/">http://anxinui.github.io/2022/08/08/hello-world/</a>
+                    <a href="http://anxinui.github.io/2022/08/01/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A101%E2%80%94%E2%80%94%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">http://anxinui.github.io/2022/08/01/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A101%E2%80%94%E2%80%94%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -518,7 +545,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">
+                                    <span class="chip bg-color">数学建模</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -690,13 +721,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2022/08/08/Java%E5%9F%BA%E7%A1%8001%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+                <a href="/2022/08/08/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Java基础01——环境搭建">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">Java基础01——环境搭建</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -718,21 +749,13 @@
                     </div>
                 </div>
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                </div>
-                
             </div>
         </div>
         
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                Current&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
                 <a href="/2022/08/01/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A101%E2%80%94%E2%80%94%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">
@@ -762,6 +785,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
