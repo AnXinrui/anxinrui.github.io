@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java基础03——程序流程控制, Serendipity">
+    <meta name="keywords" content="Java基础04——数组, Serendipity">
     <meta name="description" content="和光同尘，与时舒卷">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java基础03——程序流程控制 | 安同学</title>
+    <title>Java基础04——数组 | 安同学</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java基础03——程序流程控制</h1>
+                    <h1 class="description center-align post-title">Java基础04——数组</h1>
                 </div>
             </div>
         </div>
@@ -425,7 +425,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-08-09
+                    2022-08-11
                 </div>
                 
 
@@ -446,176 +446,104 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Java基础03——程序流程控制"><a href="#Java基础03——程序流程控制" class="headerlink" title="Java基础03——程序流程控制"></a>Java基础03——程序流程控制</h1><h2 id="“键盘录入”开发步骤-补）"><a href="#“键盘录入”开发步骤-补）" class="headerlink" title="“键盘录入”开发步骤(补）"></a>“键盘录入”开发步骤(补）</h2><ul>
-<li>导包：import java.util.Scanner;</li>
-<li>抄写代码得到扫描器对象: Scanner sc = new Scanner(System.in)</li>
-<li>抄写代码等待接收用户输入的数据: sc.nextInt() 、sc.next()</li>
+                <h1 id="Java基础04——数组"><a href="#Java基础04——数组" class="headerlink" title="Java基础04——数组"></a>Java基础04——数组</h1><h2 id="数组的定义"><a href="#数组的定义" class="headerlink" title="数组的定义"></a>数组的定义</h2><h3 id="静态初始化数组"><a href="#静态初始化数组" class="headerlink" title="静态初始化数组"></a>静态初始化数组</h3><ul>
+<li>定义数组的时候直接给数组赋值</li>
 </ul>
-<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><p>Java提供了六个关系运算符：</p>
-<p>==    相等</p>
-<p>!=    不相等</p>
-<p>&gt;     大于</p>
-<p>&gt;=    大于或等于</p>
-<p>&lt;    小于</p>
-<p>&lt;=    小于或等于</p>
-<p>注意其中有两个字符的运算符：==、&gt;=和&lt;=的两个字符必须紧紧连在一起，中间不能插入空格。</p>
-<p>关系运算的结果是一个==逻辑值==，逻辑值只有两种可能的值：true（真，表示成立）或false（假，表示不成立）。当两个值的关系符合关系运算符的预期时，关系运算的结果为true，否则为false。</p>
-<h2 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h2><h3 id="if分支"><a href="#if分支" class="headerlink" title="if分支"></a>if分支</h3><p>根据判定的结果（真或假）决定执行某个分支的代码</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 完整格式</span>
+数据类型<span class="token punctuation">[</span><span class="token punctuation">]</span> 数组名 <span class="token operator">=</span> <span class="token keyword">new</span> 数据类型<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>元素<span class="token number">1</span>，元素<span class="token number">2</span> ，元素<span class="token number">3</span>… <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">double</span><span class="token punctuation">[</span><span class="token punctuation">]</span> scores <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">double</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">89.9</span><span class="token punctuation">,</span> <span class="token number">99.5</span><span class="token punctuation">,</span> <span class="token number">59.5</span><span class="token punctuation">,</span> <span class="token number">88.0</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> ages <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">24</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 简化格式</span>
+数据类型<span class="token punctuation">[</span><span class="token punctuation">]</span> 数组名 <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> 元素<span class="token number">1</span>，元素<span class="token number">2</span> ，元素<span class="token number">3</span>，… <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> ages <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">24</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+</code></pre>
 <ul>
-<li>格式<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span> <span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-语句体<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<li>数组的访问</li>
+</ul>
+<blockquote>
+<p>数组名称[索引]</p>
+</blockquote>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 取值</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 12</span>
+
+<span class="token comment" spellcheck="true">// 赋值</span>
+arr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 100</span>
 </code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span> <span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-语句体<span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-语句体<span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<ul>
+<li>数组的长度属性：length</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 获取数组的长度（就是数组元素的个数）</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 3</span>
 </code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span> <span class="token punctuation">(</span>条件表达式<span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-语句体<span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>条件表达式<span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-语句体<span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>条件表达式<span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-语句体<span class="token number">3</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> 
-<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
-<span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-语句体n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<ul>
+<li>表示数组的最大索引</li>
+</ul>
+<blockquote>
+<p>数组名. length – 1 // 前提：元素个数大于 0</p>
+</blockquote>
+<h3 id="动态初始化数组"><a href="#动态初始化数组" class="headerlink" title="动态初始化数组"></a>动态初始化数组</h3><ul>
+<li>定义数组的时候只确定元素的类型和数组的长度，之后再存入具体数据。</li>
+<li>数组的动态初始化格式：</li>
+</ul>
+<blockquote>
+<p>数据类型[] 数组名 = new 数据类型[长度]; </p>
+<p>int[] arr = new int[3];</p>
+</blockquote>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 后赋值</span>
+arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 10</span>
+</code></pre>
+<ul>
+<li><p>元素默认值规则</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>明细</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基本类型</td>
+<td>byte、short、char、int、long</td>
+<td>0</td>
+</tr>
+<tr>
+<td>基本类型</td>
+<td>float、double</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>基本类型</td>
+<td>boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>引用类型</td>
+<td>类、接口、数组、String</td>
+<td>null</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="数组的遍历"><a href="#数组的遍历" class="headerlink" title="数组的遍历"></a>数组的遍历</h2><ul>
+<li><p>遍历：一个一个数据的访问</p>
+</li>
+<li><pre class=" language-java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> ages <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> ages<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>ages<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 </li>
 </ul>
-<h3 id="switch分支"><a href="#switch分支" class="headerlink" title="switch分支"></a>switch分支</h3><p>是匹配条件去执行分支, 适合做值匹配的分支选择，结构清晰，格式良好。</p>
-<ul>
-<li>执行流程<br>① 先执行表达式的值，拿着这个值去与case后的值进行匹配。<br>② 匹配哪个case的值为true就执行哪个case，遇到break就跳出switch分支。<br>③ 如果case后的值都不匹配则执行default代码。</li>
-<li>格式<pre class=" language-java"><code class="language-java"><span class="token keyword">switch</span><span class="token punctuation">(</span>表达式<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-<span class="token keyword">case</span> 值<span class="token number">1</span><span class="token operator">:</span>
-执行代码<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
-<span class="token keyword">break</span><span class="token punctuation">;</span>
-<span class="token keyword">case</span> 值<span class="token number">2</span><span class="token operator">:</span>
-执行代码<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
-<span class="token keyword">break</span><span class="token punctuation">;</span>
-… 
-<span class="token keyword">case</span> 值n<span class="token operator">-</span><span class="token number">1</span><span class="token operator">:</span>
-执行代码<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
-<span class="token keyword">break</span><span class="token punctuation">;</span>
-<span class="token keyword">default</span><span class="token operator">:</span>
-执行代码n<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
-<li>注意事项<br>① 表达式类型只能是byte、short、int、char，JDK5开始支持枚举，JDK7开始支持String、<br>不支持double、float、long。<br>② case给出的值不允许重复，且只能是字面量，不能是变量。<br>③ 不要忘记写break，否则会出现穿透现象。</li>
-<li>穿透性<br>如果代码执行到没有写break的case块，执行完后将直接进入下一个case块执行代码（而且不会进行任何匹配），直到遇到break才跳出分支</li>
-</ul>
-<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><ul>
-<li>格式</li>
-</ul>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span>初始化语句<span class="token punctuation">;</span> 循环条件<span class="token punctuation">;</span> 迭代语句<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        循环体语句<span class="token punctuation">(</span>重复执行的代码<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<ul>
-<li>示例</li>
-</ul>
-<pre class=" language-Java"><code class="language-Java">// 输出3次HelloWorld
-for (int i = 0; i < 3; i++) &#123;
-    System.out.println("Hello World");
-&#125;
-</code></pre>
-<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><ul>
-<li>格式</li>
-</ul>
-<pre class=" language-java"><code class="language-java">初始化语句<span class="token punctuation">;</span>
-<span class="token keyword">while</span> <span class="token punctuation">(</span>循环条件<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    循环体语句<span class="token punctuation">(</span>被重复执行的代码<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    迭代语句<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<ul>
-<li>示例</li>
-</ul>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    i<span class="token operator">++</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<h3 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do-while循环"></a>do-while循环</h3><ul>
-<li>格式</li>
-</ul>
-<pre class=" language-java"><code class="language-java">初始化语句<span class="token punctuation">;</span>
-<span class="token keyword">do</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    循环体语句<span class="token punctuation">;</span>
-    迭代语句<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>循环条件<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<ul>
-<li>示例</li>
-</ul>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">do</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>“Hello World！"<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    i<span class="token operator">++</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">while</span><span class="token punctuation">(</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<ul>
-<li>特点：一定会先执行一次循环体。</li>
-</ul>
-<h3 id="死循环"><a href="#死循环" class="headerlink" title="死循环"></a>死循环</h3><ul>
-<li><p> 一直循环的执行下去，如果没有干预不会停止下来。</p>
-</li>
-<li><p>写法</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 经典做法</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">do</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
-</ul>
-<h2 id="跳转控制语句介绍"><a href="#跳转控制语句介绍" class="headerlink" title="跳转控制语句介绍"></a>跳转控制语句介绍</h2><ul>
-<li>break : 跳出并结束当前所在循环的执行。(<strong>只能用于结束所在循环, 或者结束所在switch分支的执行。</strong>)</li>
-</ul>
-<p>可以用在嵌套循环中跳出整个外部循环的并立即结束它。</p>
-<pre class=" language-java"><code class="language-java">OUT<span class="token operator">:</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        … 
-        <span class="token keyword">break</span> OUT<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>    
-</code></pre>
-<ul>
-<li>  continue: 用于跳出当前循环的当次执行，进入下一次循环。</li>
-</ul>
-<p>(<strong>只能在循环中进行使用</strong>)</p>
-<p>:可以用在嵌套循环中跳出外部循环的当次执行，进入外部循环的下一次。</p>
-<pre class=" language-java"><code class="language-java">OUT<span class="token operator">:</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        … 
-        count OUT<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<h2 id="Random随机数技术"><a href="#Random随机数技术" class="headerlink" title="Random随机数技术"></a>Random随机数技术</h2><ul>
-<li>步骤：</li>
-</ul>
-<p>①：导包：告诉程序去JDK的哪个包中找随机数技术 <code>import java.util.Random; </code></p>
-<p>②：写一行代码代表得到随机数对象<code>Random r = new Random();</code></p>
-<p>③：调用随机数的功能获取0-9的随机数<code>int number = r.nextInt(10);</code></p>
-<ul>
-<li><p>注意：nextInt(n) 功能只能生成: 0 至 n-1之间的随机数，不包含n</p>
-</li>
-<li><p>特点： nextInt(n)功能只能生成：0 – (n-1)之间的随机数。</p>
-</li>
+<h2 id="数组的内存图"><a href="#数组的内存图" class="headerlink" title="数组的内存图"></a>数组的内存图</h2><ul>
+<li>栈 ：方法运行时使用的内存</li>
+<li>堆 ： 储存对象或者数组，new来创建的，都存储在堆内存</li>
+<li>方法区：存储可运行的class文件</li>
+<li>本地方法栈 </li>
+<li>寄存器</li>
 </ul>
 
                 
@@ -643,7 +571,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://anxinui.github.io/2022/08/09/Java%E5%9F%BA%E7%A1%8003%E2%80%94%E2%80%94%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">http://anxinui.github.io/2022/08/09/Java%E5%9F%BA%E7%A1%8003%E2%80%94%E2%80%94%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</a>
+                    <a href="http://anxinui.github.io/2022/08/11/Java%E5%9F%BA%E7%A1%8004%E2%80%94%E2%80%94%E6%95%B0%E7%BB%84/">http://anxinui.github.io/2022/08/11/Java%E5%9F%BA%E7%A1%8004%E2%80%94%E2%80%94%E6%95%B0%E7%BB%84/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -852,9 +780,10 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2022/08/11/Java%E5%9F%BA%E7%A1%8004%E2%80%94%E2%80%94%E6%95%B0%E7%BB%84/">
                     <div class="card-image">
@@ -872,9 +801,9 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -883,6 +812,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -901,13 +831,13 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/08/08/Java%E5%9F%BA%E7%A1%8002%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
+                <a href="/2022/08/09/Java%E5%9F%BA%E7%A1%8003%E2%80%94%E2%80%94%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Java基础02——基础语法">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Java基础03——程序流程控制">
                         
-                        <span class="card-title">Java基础02——基础语法</span>
+                        <span class="card-title">Java基础03——程序流程控制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -918,7 +848,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-09
                             </span>
                         <span class="publish-author">
                             
