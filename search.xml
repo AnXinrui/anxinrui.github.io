@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Java基础05——函数(方法)</title>
+      <link href="/2022/08/13/Java%E5%9F%BA%E7%A1%8005%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0(%E6%96%B9%E6%B3%95)/"/>
+      <url>/2022/08/13/Java%E5%9F%BA%E7%A1%8005%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0(%E6%96%B9%E6%B3%95)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Java基础05——函数-方法"><a href="#Java基础05——函数-方法" class="headerlink" title="Java基础05——函数(方法)"></a>Java基础05——函数(方法)</h1><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>Java的函数必须定义在类的内部，成为类的成员。定义一个函数，要像这样写：</p><blockquote><p>&lt;返回类型&gt; &lt;方法名称&gt;(&lt;参数表&gt;) {</p><p>​         &lt;方法体&gt;</p><p>}</p></blockquote><p>返回类型是这个函数运行结束时要返回给调用者的数据的类型，函数可以返回基本数据类型、对象或者void。返回void表示这个函数不返回任何值。函数名称是一个Java名字，一样要遵循和变量一样的命名规则。参数表是0个或1个或多个参数定义，用逗号’,’分隔。</p><p>在这个阶段，我们要在所有的函数的返回类型前面加上关键字“static”。static表示这个函数属于这个类，而不属于这个类的任何对象，因此我们才可以不制造这个类的对象，而直接从main()函数中调用它。</p><p>当一个函数被调用时，程序就转到这个函数中去运行，函数体里的语句就一条一条地被调用。一旦函数运行结束，就又回到调用它的地方去继续运行。</p><p><strong>示例</strong></p><pre class=" language-lang-java"><code class="language-lang-java">public class demo &#123;    public static void main(String[] args) &#123;        // TODO Auto-generated method stub        int sum = add(1,2);        System.out.println(sum);        System.out.println(add(2,3));    &#125;    public static int add(int a,int b) &#123;        int c =a+b;        return c;    &#125;&#125;</code></pre><h2 id="方法（函数）使用常见问题"><a href="#方法（函数）使用常见问题" class="headerlink" title="方法（函数）使用常见问题"></a>方法（函数）使用常见问题</h2><ul><li><p>方法的编写顺序无所谓。</p></li><li><p>方法与方法之间是平级关系，不能嵌套定义。</p></li><li><p>方法的返回值类型为void（无返回值），方法内则不能使用return返回数据，如果方法的返回值类型写了具体类型，方法内部则必 须使用return返回对应类型的数据。 </p></li><li><p>return语句下面，不能编写代码，因为永远执行不到，属于无效的代码。 </p></li><li><p>方法不调用就不执行, 调用时必须严格匹配方法的参数情况。 </p></li><li><p>有返回值的方法调用时可以选择定义变量接收结果，或者直接输出调用，甚至直接调用；无返回值方法的调用只能直接调用</p></li></ul><h2 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h2><p>同一个类中，出现多个方法名称相同，但是形参列表是不同的。</p><pre class=" language-lang-java"><code class="language-lang-java">public class Test &#123;/**（1）默认发一枚武器。*/public static void fire()&#123;    System.out.println(“默认发射一枚武器给米国！");&#125;/** （2）可以指定地区发射一枚武器。 */public static void fire(String location)&#123;    System.out.println("给"+location+"发射一枚武器！");&#125;/**（3）可以指定地区发射多枚武器。*/public static void fire(String location , int nums)&#123;    System.out.println("给"+location+"发射"+nums+"枚武器！");&#125;&#125;</code></pre><pre class=" language-lang-java"><code class="language-lang-java">fire();fire("米国");fire("岛国" , 1000);</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java基础04——数组</title>
       <link href="/2022/08/11/Java%E5%9F%BA%E7%A1%8004%E2%80%94%E2%80%94%E6%95%B0%E7%BB%84/"/>
       <url>/2022/08/11/Java%E5%9F%BA%E7%A1%8004%E2%80%94%E2%80%94%E6%95%B0%E7%BB%84/</url>
