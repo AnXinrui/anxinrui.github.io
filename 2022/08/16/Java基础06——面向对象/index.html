@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="初识数据分析01——Pandas入门, Serendipity">
+    <meta name="keywords" content="Java基础06——面向对象, Serendipity">
     <meta name="description" content="和光同尘，与时舒卷">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>初识数据分析01——Pandas入门 | 安同学</title>
+    <title>Java基础06——面向对象 | 安同学</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">初识数据分析01——Pandas入门</h1>
+                    <h1 class="description center-align post-title">Java基础06——面向对象</h1>
                 </div>
             </div>
         </div>
@@ -409,8 +409,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                                <span class="chip bg-color">数据分析</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
@@ -425,7 +425,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-08-13
+                    2022-08-16
                 </div>
                 
 
@@ -446,202 +446,130 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="数据分析01——Pandas入门"><a href="#数据分析01——Pandas入门" class="headerlink" title="数据分析01——Pandas入门"></a>数据分析01——Pandas入门</h1><h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3><ul>
-<li>导入 Pandas 与 NumPy：</li>
-</ul>
-<pre class=" language-lang-python"><code class="language-lang-python">In [1]: import numpy as np
-
-In [2]: import pandas as pd
-</code></pre>
-<ul>
-<li>载入数据</li>
-</ul>
-<pre class=" language-lang-python"><code class="language-lang-python">pd.read_csv()
-</code></pre>
-<ul>
-<li>分块读取</li>
-</ul>
-<pre class=" language-lang-py"><code class="language-lang-py">pd.read_csv('train.csv', chunksize=1000)
-</code></pre>
-<ul>
-<li>查看数据的基本信息</li>
-</ul>
-<pre class=" language-lang-python"><code class="language-lang-python">df.info()
-</code></pre>
-<ul>
-<li>判断数据是否为空，为空的地方返回True，其余地方返回False</li>
-</ul>
-<pre class=" language-lang-python"><code class="language-lang-python">df.isnull().
-</code></pre>
-<ul>
-<li>保存数据</li>
-</ul>
-<pre class=" language-lang-python"><code class="language-lang-python">df.to_csv()
-</code></pre>
-<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h4><p>Pandas Series 类似表格中的一个列（column），类似于一维数组，可以保存任何数据类型。</p>
-<p>Series 由索引（index）和列组成，函数如下：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">pandas.Series( data, index, dtype, name, copy)
-</code></pre>
-<p>参数说明：</p>
-<ul>
-<li><strong>data</strong>：一组数据(ndarray 类型)。</li>
-<li><strong>index</strong>：数据索引标签，如果不指定，默认从 0 开始。</li>
-<li><strong>dtype</strong>：数据类型，默认会自己判断。</li>
-<li><strong>name</strong>：设置名称。</li>
-<li><strong>copy</strong>：拷贝数据，默认为 False。</li>
-</ul>
-<h4 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h4><p>DataFrame 是一个表格型的数据结构，它含有一组有序的列，每列可以是不同的值类型（数值、字符串、布尔型值）。DataFrame 既有行索引也有列索引，它可以被看做由 Series 组成的字典（共同用一个索引）。</p>
-<p>DataFrame 构造方法如下：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">pandas.DataFrame( data, index, columns, dtype, copy)
-</code></pre>
-<p>参数说明：</p>
-<ul>
-<li><strong>data</strong>：一组数据(ndarray、series, map, lists, dict 等类型)。</li>
-<li><strong>index</strong>：索引值，或者可以称为行标签。</li>
-<li><strong>columns</strong>：列标签，默认为 RangeIndex (0, 1, 2, …, n) 。</li>
-<li><strong>dtype</strong>：数据类型。</li>
-<li><strong>copy</strong>：拷贝数据，默认为 False。</li>
-</ul>
-<p>例：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">pd.DataFrame(np.arange(8).reshape((2,4)),index=[2,1],columns=['d', 'a', 'b', 'c'])
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python"># 构建一个有数字有空值的DataFrame数据
-frame2 = pd.DataFrame([[1.4, np.nan], 
-                       [7.1, -4.5],
-                       [np.nan, np.nan], 
-                       [0.75, -1.3]
-                      ], index=['a', 'b', 'c', 'd'], columns=['one', 'two'])
-frame2
-</code></pre>
-<blockquote>
-<p>【代码解析】</p>
-<p>pd.DataFrame() ：创建一个DataFrame对象</p>
-<p>np.arange(8).reshape((2, 4)) : 生成一个二维数组（2*4）,第一列：0，1，2，3 第二列：4，5，6，7</p>
-<p>index=[‘2, 1] ：DataFrame 对象的索引列</p>
-<p>columns=[‘d’, ‘a’, ‘b’, ‘c’] ：DataFrame 对象的索引行</p>
-</blockquote>
-<h5 id="相加"><a href="#相加" class="headerlink" title="相加"></a>相加</h5><p>两个DataFrame相加后，会返回一个新的DataFrame，对应的行和列的值会相加，没有对应的会变成空值NaN</p>
-<h5 id="查看列名"><a href="#查看列名" class="headerlink" title="查看列名"></a>查看列名</h5><p>假定有数据集df，格式为dataframe，现想获取其列名</p>
-<ul>
-<li><p>df.columns：返回的是array格式。</p>
-</li>
-<li><p>list(df)   ：返回list格式，非常方便</p>
-</li>
-<li><p>df.keys()</p>
-</li>
-</ul>
-<h5 id="查看某一列所有值"><a href="#查看某一列所有值" class="headerlink" title="查看某一列所有值"></a>查看某一列所有值</h5><ul>
-<li>查看某一列唯一值</li>
-</ul>
-<pre class=" language-lang-py"><code class="language-lang-py">dataframe['xxx'].unique()
-</code></pre>
-<ul>
-<li><p>查看某一列所有值（例：查看”Cabin”这列的所有值）</p>
-<pre class=" language-lang-python"><code class="language-lang-python">df['Cabin'].head(3)
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">df.Cabin.head(3)
+                <h1 id="Java基础06——面向对象"><a href="#Java基础06——面向对象" class="headerlink" title="Java基础06——面向对象"></a>Java基础06——面向对象</h1><p>类(设计图)：是对象共同特征的描述； </p>
+<p>对象：是真实存在的具体实例。</p>
+<h2 id="设计对象并使用"><a href="#设计对象并使用" class="headerlink" title="设计对象并使用"></a>设计对象并使用</h2><ul>
+<li><p>定义类</p>
+<pre class=" language-lang-python"><code class="language-lang-python">public class 类名 &#123;
+1、成员变量（代表属性,一般是名词)
+2、成员方法（代表行为,一般是动词）
+3、构造器 （后面学习）
+4、代码块 （后面学习）
+5、内部类 （后面学习）
+&#125;
 </code></pre>
 </li>
 </ul>
-<h5 id="删除多余列"><a href="#删除多余列" class="headerlink" title="删除多余列"></a>删除多余列</h5><ul>
-<li>drop</li>
-</ul>
-<pre class=" language-lang-python"><code class="language-lang-python">DataFrame.drop(labels=None, axis=0, index=None, columns=None, level=None, inplace=False, errors='raise')
-</code></pre>
-<p>参数解释：</p>
-<ol>
-<li><strong>labels</strong>：单个标签或类似列表,要删除的索引或列标签。</li>
-<li>axis：{0或’index’，1或’columns’}，默认0,是从索引（0或“ index”）还是从列（1或“ columns”）中删除标签。axis=0表示行，axis=1表示列</li>
-<li>index：单个标签或类似列表,指定轴的替代方法（<strong>labels, axis=0</strong> is equivalent to <strong>index=labels</strong>）</li>
-<li>columns：单标签或类似列表,指定轴的替代方法(<strong>labels, axis=1</strong> is equivalent to <strong>columns=labels</strong>)</li>
-<li>level：int或级别名称，可选,对于MultiIndex，将从中删除标签的级别。</li>
-<li>inplace：布尔值，默认为False，如果为False，则返回副本。否则，执行就地操作并返回无。</li>
-<li>errors：{‘ignore’，’raise’}，默认为’raise’，如果’ignore’，则抑制错误，仅删除现有标签 。</li>
-</ol>
-<blockquote>
-<p>如果想要完全的删除你的数据结构，使用inplace=True，因为使用inplace就将原数据覆盖了，</p>
-</blockquote>
-<pre class=" language-lang-python"><code class="language-lang-python">df.drop(['B', 'C'], axis=1)
-
-#另一种表达
-df.drop(columns=['B', 'C'])
-
-#还可以这样表达
-df.drop(labels=['B', 'C'], axis=1)
+<pre class=" language-lang-python"><code class="language-lang-python">public class Car &#123;
+&#125;
+String name;
+double price;
+// 属性 (成员变量)
+// 行为（方法）
+public void start()&#123;
+&#125;
+public void run()&#123;
+&#125;
 </code></pre>
 <ul>
-<li>del</li>
+<li><p>定义类的补充注意事项</p>
+</li>
+<li><ul>
+<li>成员变量的完整定义格式是：修饰符 数据类型 变量名称 = 初始化值； 一般无需指定初始化值，存在默认值。</li>
+<li>类名首字母建议大写，且有意义，满足“驼峰模式”。 </li>
+<li>一个Java文件中可以定义多个class类，且只能一个类是public修饰，而且public修饰的类名必须成为代码文件名。实际开发中建议还是一个文件定义一个class类。</li>
 </ul>
-<p>例：删除test中的a列</p>
-<pre class=" language-lang-python"><code class="language-lang-python">del test['a']
-</code></pre>
-<h5 id="条件筛选"><a href="#条件筛选" class="headerlink" title="条件筛选"></a>条件筛选</h5><pre class=" language-lang-python"><code class="language-lang-python">df[df.A==100]
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">df[df["Age"]<10]
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">df[(df.A==100)&(df.B=='a')]  
-# 与
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">df[(df.A==100)|(df.B=='b')]
-#或
-</code></pre>
-<h5 id="重置索引"><a href="#重置索引" class="headerlink" title="重置索引"></a>重置索引</h5><p><strong>reset_index()</strong></p>
-<p>不想保留原来的index，使用参数 drop=True，默认 False。</p>
-<h5 id="标签索引"><a href="#标签索引" class="headerlink" title="标签索引"></a>标签索引</h5><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>loc[]</th>
-<th>基于标签索引选取数据</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>.iloc[]</td>
-<td>基于整数索引选取数据</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h5 id="按升序按列排序"><a href="#按升序按列排序" class="headerlink" title="按升序按列排序"></a>按升序按列排序</h5><ul>
-<li>.sort_values()</li>
+</li>
 </ul>
-<p>使用<code>.sort_values()</code>，将单个参数传递给包含要作为排序依据的列的名称的方法。</p>
-<p>DataFrame.sort_values(<em>by</em>=‘##’,<em>axis</em>=0,<em>ascending</em>=True, <em>inplace</em>=False, <em>na_position</em>=‘last’)</p>
-<blockquote>
-<p>参数</p>
-<p>by — 指定列名（axis=0或者’index’）或索引值（axis=1或者’columns’） </p>
-<p>axis — 按行、按列，默认axis=0按指定列排序</p>
-<p> ascending — 是否升序 默认为True </p>
-<p>inplace — 是否修改原对象</p>
-<p> kind — 排序算法 快排quicksort、归并mergesort、堆排序heapsort、稳定排序stable，默认快排 </p>
-<p>na_position — {‘first’, ‘last’} 设定缺失值的显示位置 </p>
-<p>ignore_index — 排序后是否重置索引 </p>
-<p>key — 排序之前使用的函数 （version 1.1.0 后才有该参数）</p>
+<h2 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h2><p>用于初始化一个类的对象，并返回对象的地址。</p>
+<pre class=" language-lang-java"><code class="language-lang-java">Car c = new Car();
+</code></pre>
+<h3 id="定义格式"><a href="#定义格式" class="headerlink" title="定义格式"></a>定义格式</h3><blockquote>
+<p>修饰符 类名(形参列表){</p>
+<p>​             …</p>
+<p> }</p>
 </blockquote>
+<pre class=" language-lang-java"><code class="language-lang-java">public class Car &#123;
+    ...
+    // 无参数构造器
+    public Car()&#123;
+                ...
+    &#125;
+// 有参数构造器
+public Car(String n, String b)&#123;
+        ...
+    &#125;
+&#125;
+</code></pre>
+<p>初始化对象的格式</p>
+<blockquote>
+<p>类型 变量名称 = new 构造器；</p>
+</blockquote>
+<pre class=" language-lang-java"><code class="language-lang-java">类型 变量名称 = new 构造器；
+</code></pre>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>无参数构造器（默认存在的）：初始化的对象时，成员变量的数据均采用默认值。</p>
+<p>有参数构造器：在初始化对象的时候，同时可以为对象进行赋值。</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>任何类定义出来，默认就自带了无参数构造器，写不写都有。</li>
+<li>一旦定义了有参数构造器，无参数构造器就没有了，此时就需要自己写无参数构造器了</li>
+</ul>
+<h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><p>出现在成员方法、构造器中代表当前对象的地址，用于访问当前对象的成员变量、成员方法。</p>
+<pre class=" language-lang-java"><code class="language-lang-java">public class Car &#123;
+    String name;
+    double price;
+    public void goWith(String name)&#123;
+        System.out.println(this.name + "正在和" + name + "一起比赛！！");
+    &#125;
+&#125;
+</code></pre>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p><strong>步骤</strong></p>
 <ul>
-<li>其他排序方式</li>
+<li>一般对成员变量使用private(私有)关键字修饰进行隐藏，private修饰后该成员变量就只能在当前类中访问。 </li>
+<li>提供public修饰的公开的getter、setter方法暴露其取值和赋值。</li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python"># 让行索引升序排序
-frame.sort_index()
-
-# 让列索引升序排序
-frame.sort_index(axis=1)
-
-# 让列索引降序排序
-frame.sort_index(axis=1, ascending=False)
-
-# 让任选两列数据同时降序排序
-frame.sort_values(by=['a', 'c'], ascending=False)
+<p><strong>好处</strong></p>
+<ul>
+<li>加强了程序代码的安全性。 </li>
+<li>适当的封装可以提升开发效率，同时可以让程序更容易理解与维护。</li>
+</ul>
+<pre class=" language-lang-java"><code class="language-lang-java">public class Student &#123;
+    private int age;
+    public int getAge() &#123;
+        return age;
+    &#125;
+    public void setAge(int age) &#123;
+            if (age >= 0 && age <= 200) &#123;
+                    this.age = age;
+            &#125; else &#123;
+                System.out.println("请检查年龄数值");
+            &#125;
+    &#125;
+&#125;
 </code></pre>
-<h5 id="describe-函数"><a href="#describe-函数" class="headerlink" title="describe()函数"></a><strong>describe()函数</strong></h5><pre class=" language-lang-python"><code class="language-lang-python">DataFrame.describe(percentiles=None, include=None, exclude=None)
+<h2 id="JavaBean"><a href="#JavaBean" class="headerlink" title="JavaBean"></a>JavaBean</h2><p>也可以理解成实体类，其对象可以用于在程序中封装数据。</p>
+<p><strong>要求</strong></p>
+<ul>
+<li>成员变量使用 private 修饰。 </li>
+<li>提供每一个成员变量对应的 setXxx() / getXxx()。</li>
+<li>必须提供一个无参构造器。</li>
+</ul>
+<pre class=" language-lang-java"><code class="language-lang-java">public class Car &#123;
+private String name;
+private double price;
+public String getName() &#123;
+return name;
+&#125;
+public void setName(String name) &#123;
+this.name = name;
+&#125;
+public double getPrice() &#123;
+return price;
+&#125;
+public void setPrice(double price) &#123;
+this.price = price;
+&#125;
+&#125;
 </code></pre>
-<blockquote>
-<p><strong>参数</strong></p>
-<p><strong>percentiles</strong>：赋值类似列表形式，可选<br>表示百分位数，介于0和1之间。默认值为 [.25,.5,.75]，分别返回第25，第50和第75百分位数。 可自定义其它值，用法为df.describe(percentiles=[.xx])。<br><strong>include</strong>：’all’，类似于dtypes列表或None（默认值），可选<br>要包含在结果中的数据类型的白名单。对于<code>Series</code>不可用。以下是选项：<br>‘all’：输入的所有列都将包含在输出中。<br>类似于dtypes的列表：将结果限制为提供的数据类型。将结果限制为数字类型用法：<code>numpy.number</code>。要将其限制为对象列用法：<code>numpy.object</code>。字符串也可以以<code>select_dtypes</code>（例如<code>df.describe(include=[&#39;O&#39;])</code>）的方式使用。要选择分类类型，请使用<code>&#39;category&#39;</code><br>无（默认）：结果将包括所有数字列。<br><strong>exclude</strong>：类似于dtypes列表或None（默认值），可选，<br>要从结果中除去的黑名单数据类型列表。<code>Series</code>不可用。以下是选项：<br>类似于dtypes的列表：从结果中排除提供的数据类型。排除数值类型用法：<code>numpy.number</code>。要排除对象列，使用<code>numpy.object</code>。字符串也可以以<code>select_dtypes</code>（例如<code>df.describe(include=[&#39;O&#39;])</code>）的方式使用。要排除分类类型，请使用<code>&#39;category&#39;</code><br>无（默认）：结果将不包含任何内容。</p>
-<p>count : 样本数据大小<br>mean : 样本数据的平均值<br>std : 样本数据的标准差<br>min : 样本数据的最小值<br>25% : 样本数据25%的时候的值<br>50% : 样本数据50%的时候的值<br>75% : 样本数据75%的时候的值<br>max : 样本数据的最大值</p>
-</blockquote>
-<hr>
 
                 
             </div>
@@ -668,7 +596,7 @@ frame.sort_values(by=['a', 'c'], ascending=False)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://anxinui.github.io/2022/08/13/Pandas%E5%85%A5%E9%97%A8/">http://anxinui.github.io/2022/08/13/Pandas%E5%85%A5%E9%97%A8/</a>
+                    <a href="http://anxinui.github.io/2022/08/16/Java%E5%9F%BA%E7%A1%8006%E2%80%94%E2%80%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">http://anxinui.github.io/2022/08/16/Java%E5%9F%BA%E7%A1%8006%E2%80%94%E2%80%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -706,8 +634,8 @@ frame.sort_values(by=['a', 'c'], ascending=False)
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                                    <span class="chip bg-color">数据分析</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
                         </div>
@@ -881,13 +809,13 @@ frame.sort_values(by=['a', 'c'], ascending=False)
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2022/08/16/Java%E5%9F%BA%E7%A1%8006%E2%80%94%E2%80%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+                <a href="/2022/08/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%9002%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%8F%8A%E7%89%B9%E5%BE%81%E5%A4%84%E7%90%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Java基础06——面向对象">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="数据分析02——数据清洗及特征处理">
                         
-                        <span class="card-title">Java基础06——面向对象</span>
+                        <span class="card-title">数据分析02——数据清洗及特征处理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -911,8 +839,8 @@ frame.sort_values(by=['a', 'c'], ascending=False)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">数据分析</span>
                     </a>
                     
                 </div>
@@ -926,13 +854,13 @@ frame.sort_values(by=['a', 'c'], ascending=False)
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/08/13/Java%E5%9F%BA%E7%A1%8005%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0(%E6%96%B9%E6%B3%95)/">
+                <a href="/2022/08/13/Pandas%E5%85%A5%E9%97%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Java基础05——函数(方法)">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="初识数据分析01——Pandas入门">
                         
-                        <span class="card-title">Java基础05——函数(方法)</span>
+                        <span class="card-title">初识数据分析01——Pandas入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -956,8 +884,8 @@ frame.sort_values(by=['a', 'c'], ascending=False)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">数据分析</span>
                     </a>
                     
                 </div>
