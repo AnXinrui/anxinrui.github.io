@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="数据分析02——数据清洗及特征处理, Serendipity">
+    <meta name="keywords" content="初识数据分析01——Pandas入门, Serendipity">
     <meta name="description" content="和光同尘，与时舒卷">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>数据分析02——数据清洗及特征处理 | 安同学</title>
+    <title>初识数据分析01——Pandas入门 | 安同学</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -293,7 +293,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">数据分析02——数据清洗及特征处理</h1>
+                    <h1 class="description center-align post-title">初识数据分析01——Pandas入门</h1>
                 </div>
             </div>
         </div>
@@ -425,7 +425,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-08-16
+                    2022-08-13
                 </div>
                 
 
@@ -446,154 +446,202 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="数据分析02——数据清洗及特征处理"><a href="#数据分析02——数据清洗及特征处理" class="headerlink" title="数据分析02——数据清洗及特征处理"></a>数据分析02——数据清洗及特征处理</h1><h2 id="查看数据"><a href="#查看数据" class="headerlink" title="查看数据"></a>查看数据</h2><h3 id="info"><a href="#info" class="headerlink" title=".info()"></a>.info()</h3><h5 id="打印-DataFrame-的简要摘要，显示有关-DataFrame的信息，包括索引的数据类型dtype和列的数据类型dtype，非空值的数量和内存使用情况。"><a href="#打印-DataFrame-的简要摘要，显示有关-DataFrame的信息，包括索引的数据类型dtype和列的数据类型dtype，非空值的数量和内存使用情况。" class="headerlink" title="打印 DataFrame 的简要摘要，显示有关 DataFrame的信息，包括索引的数据类型dtype和列的数据类型dtype，非空值的数量和内存使用情况。"></a>打印 DataFrame 的简要摘要，显示有关 DataFrame的信息，包括索引的数据类型dtype和列的数据类型dtype，非空值的数量和内存使用情况。</h5><pre class=" language-lang-py"><code class="language-lang-py">df.info
-</code></pre>
-<h3 id="isnull"><a href="#isnull" class="headerlink" title=".isnull()"></a>.isnull()</h3><ul>
-<li><code>df.isnull()</code>来判断缺失值</li>
-<li><code>df.isnull().sum()</code>统计缺失值个数</li>
+                <h1 id="数据分析01——Pandas入门"><a href="#数据分析01——Pandas入门" class="headerlink" title="数据分析01——Pandas入门"></a>数据分析01——Pandas入门</h1><h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3><ul>
+<li>导入 Pandas 与 NumPy：</li>
 </ul>
-<h3 id="显示所需列的数据信息"><a href="#显示所需列的数据信息" class="headerlink" title="显示所需列的数据信息"></a>显示所需列的数据信息</h3><pre class=" language-lang-py"><code class="language-lang-py">df[['Age','Cabin','Embarked']]
-</code></pre>
-<h2 id="缺失值处理——dropna函数与fillna函数"><a href="#缺失值处理——dropna函数与fillna函数" class="headerlink" title="缺失值处理——dropna函数与fillna函数"></a>缺失值处理——dropna函数与fillna函数</h2><h3 id="dropna"><a href="#dropna" class="headerlink" title=".dropna()"></a>.dropna()</h3><pre class=" language-lang-python"><code class="language-lang-python">.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)[source]
+<pre class=" language-lang-python"><code class="language-lang-python">In [1]: import numpy as np
+
+In [2]: import pandas as pd
 </code></pre>
 <ul>
-<li>默认滤除所有包含NaN</li>
-<li>传入<strong>how=‘all’</strong>滤除全为NaN的行，传入<strong>axis=1</strong>滤除列</li>
-<li>传入<strong>thresh=n</strong>保留至少有n个非NaN数据的行</li>
+<li>载入数据</li>
 </ul>
-<pre class=" language-lang-py"><code class="language-lang-py">df[df['Age']==None]=0
-
-df[df['Age'].isnull()] = 0
-
-df[df['Age'] == np.nan] = 0
-
-df.dropna()
-# 把缺失值替换为0
+<pre class=" language-lang-python"><code class="language-lang-python">pd.read_csv()
 </code></pre>
-<h3 id="fillna"><a href="#fillna" class="headerlink" title=".fillna()"></a>.fillna()</h3><pre class=" language-lang-python"><code class="language-lang-python">DataFrame.fillna(value=None, method=None, axis=None, inplace=False, limit=None, downcast=None)
+<ul>
+<li>分块读取</li>
+</ul>
+<pre class=" language-lang-py"><code class="language-lang-py">pd.read_csv('train.csv', chunksize=1000)
 </code></pre>
-<pre class=" language-lang-py"><code class="language-lang-py">df.fillna(0)
-# 把缺失值替换为0
+<ul>
+<li>查看数据的基本信息</li>
+</ul>
+<pre class=" language-lang-python"><code class="language-lang-python">df.info()
 </code></pre>
+<ul>
+<li>判断数据是否为空，为空的地方返回True，其余地方返回False</li>
+</ul>
+<pre class=" language-lang-python"><code class="language-lang-python">df.isnull().
+</code></pre>
+<ul>
+<li>保存数据</li>
+</ul>
+<pre class=" language-lang-python"><code class="language-lang-python">df.to_csv()
+</code></pre>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h4><p>Pandas Series 类似表格中的一个列（column），类似于一维数组，可以保存任何数据类型。</p>
+<p>Series 由索引（index）和列组成，函数如下：</p>
+<pre class=" language-lang-python"><code class="language-lang-python">pandas.Series( data, index, dtype, name, copy)
+</code></pre>
+<p>参数说明：</p>
+<ul>
+<li><strong>data</strong>：一组数据(ndarray 类型)。</li>
+<li><strong>index</strong>：数据索引标签，如果不指定，默认从 0 开始。</li>
+<li><strong>dtype</strong>：数据类型，默认会自己判断。</li>
+<li><strong>name</strong>：设置名称。</li>
+<li><strong>copy</strong>：拷贝数据，默认为 False。</li>
+</ul>
+<h4 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h4><p>DataFrame 是一个表格型的数据结构，它含有一组有序的列，每列可以是不同的值类型（数值、字符串、布尔型值）。DataFrame 既有行索引也有列索引，它可以被看做由 Series 组成的字典（共同用一个索引）。</p>
+<p>DataFrame 构造方法如下：</p>
+<pre class=" language-lang-python"><code class="language-lang-python">pandas.DataFrame( data, index, columns, dtype, copy)
+</code></pre>
+<p>参数说明：</p>
+<ul>
+<li><strong>data</strong>：一组数据(ndarray、series, map, lists, dict 等类型)。</li>
+<li><strong>index</strong>：索引值，或者可以称为行标签。</li>
+<li><strong>columns</strong>：列标签，默认为 RangeIndex (0, 1, 2, …, n) 。</li>
+<li><strong>dtype</strong>：数据类型。</li>
+<li><strong>copy</strong>：拷贝数据，默认为 False。</li>
+</ul>
+<p>例：</p>
+<pre class=" language-lang-python"><code class="language-lang-python">pd.DataFrame(np.arange(8).reshape((2,4)),index=[2,1],columns=['d', 'a', 'b', 'c'])
+</code></pre>
+<pre class=" language-lang-python"><code class="language-lang-python"># 构建一个有数字有空值的DataFrame数据
+frame2 = pd.DataFrame([[1.4, np.nan], 
+                       [7.1, -4.5],
+                       [np.nan, np.nan], 
+                       [0.75, -1.3]
+                      ], index=['a', 'b', 'c', 'd'], columns=['one', 'two'])
+frame2
+</code></pre>
+<blockquote>
+<p>【代码解析】</p>
+<p>pd.DataFrame() ：创建一个DataFrame对象</p>
+<p>np.arange(8).reshape((2, 4)) : 生成一个二维数组（2*4）,第一列：0，1，2，3 第二列：4，5，6，7</p>
+<p>index=[‘2, 1] ：DataFrame 对象的索引列</p>
+<p>columns=[‘d’, ‘a’, ‘b’, ‘c’] ：DataFrame 对象的索引行</p>
+</blockquote>
+<h5 id="相加"><a href="#相加" class="headerlink" title="相加"></a>相加</h5><p>两个DataFrame相加后，会返回一个新的DataFrame，对应的行和列的值会相加，没有对应的会变成空值NaN</p>
+<h5 id="查看列名"><a href="#查看列名" class="headerlink" title="查看列名"></a>查看列名</h5><p>假定有数据集df，格式为dataframe，现想获取其列名</p>
+<ul>
+<li><p>df.columns：返回的是array格式。</p>
+</li>
+<li><p>list(df)   ：返回list格式，非常方便</p>
+</li>
+<li><p>df.keys()</p>
+</li>
+</ul>
+<h5 id="查看某一列所有值"><a href="#查看某一列所有值" class="headerlink" title="查看某一列所有值"></a>查看某一列所有值</h5><ul>
+<li>查看某一列唯一值</li>
+</ul>
+<pre class=" language-lang-py"><code class="language-lang-py">dataframe['xxx'].unique()
+</code></pre>
+<ul>
+<li><p>查看某一列所有值（例：查看”Cabin”这列的所有值）</p>
+<pre class=" language-lang-python"><code class="language-lang-python">df['Cabin'].head(3)
+</code></pre>
+<pre class=" language-lang-python"><code class="language-lang-python">df.Cabin.head(3)
+</code></pre>
+</li>
+</ul>
+<h5 id="删除多余列"><a href="#删除多余列" class="headerlink" title="删除多余列"></a>删除多余列</h5><ul>
+<li>drop</li>
+</ul>
+<pre class=" language-lang-python"><code class="language-lang-python">DataFrame.drop(labels=None, axis=0, index=None, columns=None, level=None, inplace=False, errors='raise')
+</code></pre>
+<p>参数解释：</p>
+<ol>
+<li><strong>labels</strong>：单个标签或类似列表,要删除的索引或列标签。</li>
+<li>axis：{0或’index’，1或’columns’}，默认0,是从索引（0或“ index”）还是从列（1或“ columns”）中删除标签。axis=0表示行，axis=1表示列</li>
+<li>index：单个标签或类似列表,指定轴的替代方法（<strong>labels, axis=0</strong> is equivalent to <strong>index=labels</strong>）</li>
+<li>columns：单标签或类似列表,指定轴的替代方法(<strong>labels, axis=1</strong> is equivalent to <strong>columns=labels</strong>)</li>
+<li>level：int或级别名称，可选,对于MultiIndex，将从中删除标签的级别。</li>
+<li>inplace：布尔值，默认为False，如果为False，则返回副本。否则，执行就地操作并返回无。</li>
+<li>errors：{‘ignore’，’raise’}，默认为’raise’，如果’ignore’，则抑制错误，仅删除现有标签 。</li>
+</ol>
+<blockquote>
+<p>如果想要完全的删除你的数据结构，使用inplace=True，因为使用inplace就将原数据覆盖了，</p>
+</blockquote>
+<pre class=" language-lang-python"><code class="language-lang-python">df.drop(['B', 'C'], axis=1)
+
+#另一种表达
+df.drop(columns=['B', 'C'])
+
+#还可以这样表达
+df.drop(labels=['B', 'C'], axis=1)
+</code></pre>
+<ul>
+<li>del</li>
+</ul>
+<p>例：删除test中的a列</p>
+<pre class=" language-lang-python"><code class="language-lang-python">del test['a']
+</code></pre>
+<h5 id="条件筛选"><a href="#条件筛选" class="headerlink" title="条件筛选"></a>条件筛选</h5><pre class=" language-lang-python"><code class="language-lang-python">df[df.A==100]
+</code></pre>
+<pre class=" language-lang-python"><code class="language-lang-python">df[df["Age"]<10]
+</code></pre>
+<pre class=" language-lang-python"><code class="language-lang-python">df[(df.A==100)&(df.B=='a')]  
+# 与
+</code></pre>
+<pre class=" language-lang-python"><code class="language-lang-python">df[(df.A==100)|(df.B=='b')]
+#或
+</code></pre>
+<h5 id="重置索引"><a href="#重置索引" class="headerlink" title="重置索引"></a>重置索引</h5><p><strong>reset_index()</strong></p>
+<p>不想保留原来的index，使用参数 drop=True，默认 False。</p>
+<h5 id="标签索引"><a href="#标签索引" class="headerlink" title="标签索引"></a>标签索引</h5><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>loc[]</th>
+<th>基于标签索引选取数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.iloc[]</td>
+<td>基于整数索引选取数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5 id="按升序按列排序"><a href="#按升序按列排序" class="headerlink" title="按升序按列排序"></a>按升序按列排序</h5><ul>
+<li>.sort_values()</li>
+</ul>
+<p>使用<code>.sort_values()</code>，将单个参数传递给包含要作为排序依据的列的名称的方法。</p>
+<p>DataFrame.sort_values(<em>by</em>=‘##’,<em>axis</em>=0,<em>ascending</em>=True, <em>inplace</em>=False, <em>na_position</em>=‘last’)</p>
+<blockquote>
 <p>参数</p>
-<blockquote>
-<p><code>value</code> ：用来填充缺失值的值</p>
-<p><code>inplace</code>参数的取值：True、False</p>
-<p>True：直接修改原对象</p>
-<p>False：创建一个副本，修改副本，原对象不变（缺省默认）</p>
-<p><code>method</code>参数的取值：<br>{‘backfill’, ‘bfill’, ‘pad’, ‘ffill’, None}, default None<br>method = ‘ffill’/‘pad’：用前一个非缺失值去填充该缺失值;<br>method = ‘bfill’/‘backfill’：用下一个非缺失值填充该缺失值;</p>
-<p><code>axis</code>参数的取值：<br>{0 or ‘index’, 1 or ‘columns’}<br>沿其填充缺失值的轴。</p>
-<p><code>limit</code>参数：限制填充个数</p>
-</blockquote>
-<h2 id="查看数据重复值"><a href="#查看数据重复值" class="headerlink" title="查看数据重复值"></a>查看数据重复值</h2><pre class=" language-lang-py"><code class="language-lang-py">DataFrame.duplicated(subset=None, keep='first')
-</code></pre>
-<p>subset：</p>
-<ul>
-<li>如果你认为几个字段重复，则数据重复，就把那几个字段以列表形式放到subset后面。默认是所有字段重复为重复数据。</li>
-</ul>
-<p>keep:</p>
-<ul>
-<li>默认为’first’ ,也就是如果有重复数据，则第一条出现的定义为False，后面的重复数据为True。</li>
-<li>如果为’last’，也就是如果有重复数据，则最后一条出现的定义为False，后面的重复数据为True。</li>
-<li>如果为False，则所有重复的为True</li>
-</ul>
-<pre class=" language-lang-python"><code class="language-lang-python"># 检测重复值
-df.duplicated()
-</code></pre>
-<pre class=" language-lang-py"><code class="language-lang-py">#查看重复值
-df[df.duplicated()]
-</code></pre>
-<h3 id="去重——drop-duplicates"><a href="#去重——drop-duplicates" class="headerlink" title="去重——drop_duplicates()"></a>去重——drop_duplicates()</h3><pre class=" language-lang-python"><code class="language-lang-python">df.drop_duplicates(subset=['A','B','C'],keep='first',inplace=True)
-</code></pre>
-<p>参数说明如下：</p>
-<ul>
-<li>subset：表示要进去重的列名，默认为 None。</li>
-<li>keep：有三个可选参数，分别是 first、last、False，默认为 first，表示只保留第一次出现的重复项，删除其余重复项，last 表示只保留最后一次出现的重复项，False 则表示删除所有重复项。</li>
-<li>inplace：布尔值参数，默认为 False 表示删除重复项后返回一个副本，若为 Ture 则表示直接在原数据上删除重复项。</li>
-</ul>
-<h2 id="分箱（离散化）处理"><a href="#分箱（离散化）处理" class="headerlink" title="分箱（离散化）处理"></a>分箱（离散化）处理</h2><p>分箱操作：将连续数据转换为分类对应物的过程</p>
-<h3 id="pd-cut"><a href="#pd-cut" class="headerlink" title="pd.cut()"></a>pd.cut()</h3><pre class=" language-lang-py"><code class="language-lang-py">pandas.cut(x, bins, right=True, labels=None, retbins=False, precision=3, include_lowest=False, duplicates='raise', ordered=True)
-</code></pre>
-<blockquote>
-<p>x：分箱时输入的数组，必须为一位数组<br>bins：分类依据的标准，可以是int、标量序列或间隔索引(IntervalIndex)<br>right：是否包含bins区间的最右边，默认为True，最右边为闭区间，False则不包含<br>labels：要返回的标签，和bins的区间对应<br>retbins：是否返回bins,当bins作为标量时使用非常有用，默认为False<br>precision：精度，int类型<br>include_lowest：第一个区间是否为左包含(左边为闭区间)，默认为False,表示不包含，True则包含<br>duplicates：可选，默认为{default ‘raise’, ‘drop’}，如果 bin 边缘不是唯一的，则引发 ValueError 或删除非唯一的。<br>ordered：默认为True，表示标签是否有序。如果为 True，则将对生成的分类进行排序。如果为 False，则生成的分类将是无序的（必须提供标签）</p>
-</blockquote>
-<p>例</p>
-<ul>
-<li>连续变量Age平均分箱成5个年龄段，并分别用类别变量12345表示</li>
-</ul>
-<pre class=" language-lang-py"><code class="language-lang-py">df['AgeBand']=pd.cut(df['Age'],bins=5,labels=[1,2,3,4,5])
-</code></pre>
-<ul>
-<li>将连续变量Age划分为[0,5) [5,15) [15,30) [30,50) [50,80)五个年龄段，并分别用类别变量12345表示</li>
-</ul>
-<pre class=" language-lang-py"><code class="language-lang-py">df['AgeBand']=pd.cut(df['Age'],bins=[0,5,15,30,50,80],labels=[1,2,3,4,5])
-</code></pre>
-<h3 id="pd-qcut"><a href="#pd-qcut" class="headerlink" title="pd.qcut()"></a>pd.qcut()</h3><pre class=" language-lang-py"><code class="language-lang-py">pandas.qcut(x, q, labels=None, retbins=False, precision=3, duplicates='raise')
-</code></pre>
-<blockquote>
-<p>x ：一维数组或者Serise</p>
-<p>q ： 表示分位数的整数或者数组，</p>
-<ul>
-<li>如果是分位数的整数，例如10用于十分位，4用于四分位</li>
-<li>如果是分位数数组，例如[0,0.25,0.5,0.75,1]用于四分位数</li>
-</ul>
-<p>labels ： 数组或者布尔值，默认为none，用于指定每个箱体的标签</p>
-<ul>
-<li>如果是数组，长度要与分箱个数一致，比如用四分位数分箱，需要指定四个标签</li>
-<li>如果为False，则仅返回分箱的整数指示符，即当前数据位于哪个箱子中</li>
-</ul>
-<p>rebines ：布尔值，可选。 是否显示分箱的分界值。（由于是按照分位数进行分箱，在不知道分位数具体数值的情况下，可以通过这个参数设置显示分界值即分位数的具体数值）</p>
-<p>precision：整数，默认3，存储和显示分箱标签的精度。</p>
-<p>duplicates：如果分箱临界值不唯一，则引发ValueError或丢弃非唯一</p>
+<p>by — 指定列名（axis=0或者’index’）或索引值（axis=1或者’columns’） </p>
+<p>axis — 按行、按列，默认axis=0按指定列排序</p>
+<p> ascending — 是否升序 默认为True </p>
+<p>inplace — 是否修改原对象</p>
+<p> kind — 排序算法 快排quicksort、归并mergesort、堆排序heapsort、稳定排序stable，默认快排 </p>
+<p>na_position — {‘first’, ‘last’} 设定缺失值的显示位置 </p>
+<p>ignore_index — 排序后是否重置索引 </p>
+<p>key — 排序之前使用的函数 （version 1.1.0 后才有该参数）</p>
 </blockquote>
 <ul>
-<li>将连续变量Age按10% 30% 50% 70% 90%五个年龄段，并用分类变量12345表示</li>
+<li>其他排序方式</li>
 </ul>
-<pre class=" language-lang-py"><code class="language-lang-py">df['AgeBand'] = pd.qcut(df['Age'],[0,0.1,0.3,0.5,0.7,0.9],labels = [1,2,3,4,5])
-</code></pre>
-<h2 id="查看类别文本变量名及种类"><a href="#查看类别文本变量名及种类" class="headerlink" title="查看类别文本变量名及种类"></a>查看类别文本变量名及种类</h2><ul>
-<li>value_counts</li>
-</ul>
-<pre class=" language-lang-py"><code class="language-lang-py">df['Sex'].value_counts()
-</code></pre>
-<ul>
-<li>unique</li>
-</ul>
-<pre class=" language-lang-py"><code class="language-lang-py">df['Sex'].unique()
-</code></pre>
-<h2 id="转换文本变量"><a href="#转换文本变量" class="headerlink" title="转换文本变量"></a>转换文本变量</h2><ul>
-<li>方法一: replace</li>
-</ul>
-<pre class=" language-lang-py"><code class="language-lang-py">df['Sex_num'] = df['Sex'].replace(['male','female'],[1,2]
-</code></pre>
-<ul>
-<li>方法二: map</li>
-</ul>
-<pre class=" language-lang-py"><code class="language-lang-py">df['Sex_num'] = df['Sex'].map(&#123;'male': 1, 'female': 2&#125;)
-df.head()
-</code></pre>
-<ul>
-<li>方法三: 使用sklearn.preprocessing的LabelEncoder</li>
-</ul>
-<pre class=" language-lang-py"><code class="language-lang-py">from sklearn.preprocessing import LabelEncoder
-for feat in ['Cabin', 'Ticket']:
-    lbl = LabelEncoder()  
-    label_dict = dict(zip(df[feat].unique(), range(df[feat].nunique())))
-    df[feat + "_labelEncode"] = df[feat].map(label_dict)
-    df[feat + "_labelEncode"] = lbl.fit_transform(df[feat].astype(str))
+<pre class=" language-lang-python"><code class="language-lang-python"># 让行索引升序排序
+frame.sort_index()
 
-df.head()
+# 让列索引升序排序
+frame.sort_index(axis=1)
+
+# 让列索引降序排序
+frame.sort_index(axis=1, ascending=False)
+
+# 让任选两列数据同时降序排序
+frame.sort_values(by=['a', 'c'], ascending=False)
 </code></pre>
-<h2 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h2><pre class=" language-lang-py"><code class="language-lang-py">Series.str.extract（self，pat，flags = 0，expand = True ）
+<h5 id="describe-函数"><a href="#describe-函数" class="headerlink" title="describe()函数"></a><strong>describe()函数</strong></h5><pre class=" language-lang-python"><code class="language-lang-python">DataFrame.describe(percentiles=None, include=None, exclude=None)
 </code></pre>
 <blockquote>
-<p>pat ： str</p>
-<p>具有捕获组的正则表达式模式。</p>
-<p>flags ： int，默认为0（无标志）</p>
-<p>来自re模块的标志，例如re.IGNORECASE，修改正则表达式匹配，例如大小写，空格等。有关详细信息，请参阅re。</p>
-<p>expand ： bool，默认为True</p>
-<p>如果为True，则返回DataFrame，每个捕获组一列。如果为False，如果有一个捕获组，则返回系列/索引;如果有多个捕获组，则返回DataFrame。</p>
+<p><strong>参数</strong></p>
+<p><strong>percentiles</strong>：赋值类似列表形式，可选<br>表示百分位数，介于0和1之间。默认值为 [.25,.5,.75]，分别返回第25，第50和第75百分位数。 可自定义其它值，用法为df.describe(percentiles=[.xx])。<br><strong>include</strong>：’all’，类似于dtypes列表或None（默认值），可选<br>要包含在结果中的数据类型的白名单。对于<code>Series</code>不可用。以下是选项：<br>‘all’：输入的所有列都将包含在输出中。<br>类似于dtypes的列表：将结果限制为提供的数据类型。将结果限制为数字类型用法：<code>numpy.number</code>。要将其限制为对象列用法：<code>numpy.object</code>。字符串也可以以<code>select_dtypes</code>（例如<code>df.describe(include=[&#39;O&#39;])</code>）的方式使用。要选择分类类型，请使用<code>&#39;category&#39;</code><br>无（默认）：结果将包括所有数字列。<br><strong>exclude</strong>：类似于dtypes列表或None（默认值），可选，<br>要从结果中除去的黑名单数据类型列表。<code>Series</code>不可用。以下是选项：<br>类似于dtypes的列表：从结果中排除提供的数据类型。排除数值类型用法：<code>numpy.number</code>。要排除对象列，使用<code>numpy.object</code>。字符串也可以以<code>select_dtypes</code>（例如<code>df.describe(include=[&#39;O&#39;])</code>）的方式使用。要排除分类类型，请使用<code>&#39;category&#39;</code><br>无（默认）：结果将不包含任何内容。</p>
+<p>count : 样本数据大小<br>mean : 样本数据的平均值<br>std : 样本数据的标准差<br>min : 样本数据的最小值<br>25% : 样本数据25%的时候的值<br>50% : 样本数据50%的时候的值<br>75% : 样本数据75%的时候的值<br>max : 样本数据的最大值</p>
 </blockquote>
+<hr>
 
                 
             </div>
@@ -620,7 +668,7 @@ df.head()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://anxinui.github.io/2022/08/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%9002%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%8F%8A%E7%89%B9%E5%BE%81%E5%A4%84%E7%90%86/">http://anxinui.github.io/2022/08/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%9002%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%8F%8A%E7%89%B9%E5%BE%81%E5%A4%84%E7%90%86/</a>
+                    <a href="http://anxinui.github.io/2022/08/13/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%9001%E2%80%94%E2%80%94Pandas%E5%85%A5%E9%97%A8/">http://anxinui.github.io/2022/08/13/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%9001%E2%80%94%E2%80%94Pandas%E5%85%A5%E9%97%A8/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -833,51 +881,6 @@ df.head()
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2022/08/19/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%9003%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E9%87%8D%E6%9E%84/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="数据分析03——数据重构">
-                        
-                        <span class="card-title">数据分析03——数据重构</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-19
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            安欣锐
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                        <span class="chip bg-color">数据分析</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2022/08/16/Java%E5%9F%BA%E7%A1%8006%E2%80%94%E2%80%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                     <div class="card-image">
                         
@@ -894,8 +897,53 @@ df.head()
                         
                     </div>
                     <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            安欣锐
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/08/13/Java%E5%9F%BA%E7%A1%8005%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0(%E6%96%B9%E6%B3%95)/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Java基础05——函数(方法)">
+                        
+                        <span class="card-title">Java基础05——函数(方法)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-13
                             </span>
                         <span class="publish-author">
                             

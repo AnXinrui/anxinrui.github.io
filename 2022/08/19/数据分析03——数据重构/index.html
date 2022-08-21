@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="初识数据分析01——Pandas入门, Serendipity">
+    <meta name="keywords" content="数据分析03——数据重构, Serendipity">
     <meta name="description" content="和光同尘，与时舒卷">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>初识数据分析01——Pandas入门 | 安同学</title>
+    <title>数据分析03——数据重构 | 安同学</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">初识数据分析01——Pandas入门</h1>
+                    <h1 class="description center-align post-title">数据分析03——数据重构</h1>
                 </div>
             </div>
         </div>
@@ -425,7 +425,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-08-13
+                    2022-08-19
                 </div>
                 
 
@@ -446,203 +446,146 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="数据分析01——Pandas入门"><a href="#数据分析01——Pandas入门" class="headerlink" title="数据分析01——Pandas入门"></a>数据分析01——Pandas入门</h1><h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3><ul>
-<li>导入 Pandas 与 NumPy：</li>
+                <h1 id="数据分析03——数据重构"><a href="#数据分析03——数据重构" class="headerlink" title="数据分析03——数据重构"></a>数据分析03——数据重构</h1><h2 id="数据合并"><a href="#数据合并" class="headerlink" title="数据合并"></a>数据合并</h2><ul>
+<li>pandas.concat</li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">In [1]: import numpy as np
-
-In [2]: import pandas as pd
+<pre class=" language-lang-py"><code class="language-lang-py">pandas.concat(objs, axis=0, join='outer', ignore_index=False, keys=None, levels=None, names=None, verify_integrity=False, sort=False, copy=True)
+</code></pre>
+<p>[例]</p>
+<pre class=" language-lang-py"><code class="language-lang-py">list_down=[text_left_down,text_right_down]
+result_down = pd.concat(list_down,axis=1)
+result = pd.concat([result_up,result_down])
 </code></pre>
 <ul>
-<li>载入数据</li>
+<li><h2 id="横向合并-join"><a href="#横向合并-join" class="headerlink" title="横向合并:join"></a>横向合并:join</h2></li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">pd.read_csv()
+<pre class=" language-lang-py"><code class="language-lang-py">movies.join(ratings, on='movie_id', lsuffix='_left', rsuffix='_right')
+# 使用左DataFrame的movie_id和右DataFrame的index进行结合，默认是left join
 </code></pre>
 <ul>
-<li>分块读取</li>
+<li>append(The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.)</li>
 </ul>
-<pre class=" language-lang-py"><code class="language-lang-py">pd.read_csv('train.csv', chunksize=1000)
+<pre class=" language-lang-py"><code class="language-lang-py">DataFrame.append(other, ignore_index=False, verify_integrity=False, sort=False)
 </code></pre>
 <ul>
-<li>查看数据的基本信息</li>
+<li>merge</li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">df.info()
-</code></pre>
-<ul>
-<li>判断数据是否为空，为空的地方返回True，其余地方返回False</li>
-</ul>
-<pre class=" language-lang-python"><code class="language-lang-python">df.isnull().
-</code></pre>
-<ul>
-<li>保存数据</li>
-</ul>
-<pre class=" language-lang-python"><code class="language-lang-python">df.to_csv()
-</code></pre>
-<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h4><p>Pandas Series 类似表格中的一个列（column），类似于一维数组，可以保存任何数据类型。</p>
-<p>Series 由索引（index）和列组成，函数如下：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">pandas.Series( data, index, dtype, name, copy)
-</code></pre>
-<p>参数说明：</p>
-<ul>
-<li><strong>data</strong>：一组数据(ndarray 类型)。</li>
-<li><strong>index</strong>：数据索引标签，如果不指定，默认从 0 开始。</li>
-<li><strong>dtype</strong>：数据类型，默认会自己判断。</li>
-<li><strong>name</strong>：设置名称。</li>
-<li><strong>copy</strong>：拷贝数据，默认为 False。</li>
-</ul>
-<h4 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h4><p>DataFrame 是一个表格型的数据结构，它含有一组有序的列，每列可以是不同的值类型（数值、字符串、布尔型值）。DataFrame 既有行索引也有列索引，它可以被看做由 Series 组成的字典（共同用一个索引）。</p>
-<p>DataFrame 构造方法如下：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">pandas.DataFrame( data, index, columns, dtype, copy)
-</code></pre>
-<p>参数说明：</p>
-<ul>
-<li><strong>data</strong>：一组数据(ndarray、series, map, lists, dict 等类型)。</li>
-<li><strong>index</strong>：索引值，或者可以称为行标签。</li>
-<li><strong>columns</strong>：列标签，默认为 RangeIndex (0, 1, 2, …, n) 。</li>
-<li><strong>dtype</strong>：数据类型。</li>
-<li><strong>copy</strong>：拷贝数据，默认为 False。</li>
-</ul>
-<p>例：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">pd.DataFrame(np.arange(8).reshape((2,4)),index=[2,1],columns=['d', 'a', 'b', 'c'])
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python"># 构建一个有数字有空值的DataFrame数据
-frame2 = pd.DataFrame([[1.4, np.nan], 
-                       [7.1, -4.5],
-                       [np.nan, np.nan], 
-                       [0.75, -1.3]
-                      ], index=['a', 'b', 'c', 'd'], columns=['one', 'two'])
-frame2
+<pre class=" language-lang-py"><code class="language-lang-py">pd.merge(left, right, how='inner', on=None, left_on=None, right_on=None,
+         left_index=False, right_index=False, sort=True,
+         suffixes=('_x', '_y'), copy=True, indicator=False,
+         validate=None)
 </code></pre>
 <blockquote>
-<p>【代码解析】</p>
-<p>pd.DataFrame() ：创建一个DataFrame对象</p>
-<p>np.arange(8).reshape((2, 4)) : 生成一个二维数组（2*4）,第一列：0，1，2，3 第二列：4，5，6，7</p>
-<p>index=[‘2, 1] ：DataFrame 对象的索引列</p>
-<p>columns=[‘d’, ‘a’, ‘b’, ‘c’] ：DataFrame 对象的索引行</p>
+<p>参数如下：</p>
+<p>left: 拼接的左侧DataFrame对象<br>right: 拼接的右侧DataFrame对象<br>on: 要加入的列或索引级别名称。 必须在左侧和右侧DataFrame对象中找到。 如果未传递且left_index和right_index为False，则DataFrame中的列的交集将被推断为连接键。<br>left_on:左侧DataFrame中的列或索引级别用作键。 可以是列名，索引级名称，也可以是长度等于DataFrame长度的数组。<br>right_on: 左侧DataFrame中的列或索引级别用作键。 可以是列名，索引级名称，也可以是长度等于DataFrame长度的数组。<br>left_index: 如果为True，则使用左侧DataFrame中的索引（行标签）作为其连接键。 对于具有MultiIndex（分层）的DataFrame，级别数必须与右侧DataFrame中的连接键数相匹配。<br>right_index: 与left_index功能相似。<br>how: One of ‘left’, ‘right’, ‘outer’, ‘inner’. 默认inner。inner是取交集，outer取并集。比如left：[‘A’,‘B’,‘C’];right[’’A,‘C’,‘D’]；inner取交集的话，left中出现的A会和right中出现的买一个A进行匹配拼接，如果没有是B，在right中没有匹配到，则会丢失。’outer’取并集，出现的A会进行一一匹配，没有同时出现的会将缺失的部分添加缺失值。<br>sort: 按字典顺序通过连接键对结果DataFrame进行排序。 默认为True，设置为False将在很多情况下显着提高性能。<br>suffixes: 用于重叠列的字符串后缀元组。 默认为（‘x’，’ y’）。<br>copy: 始终从传递的DataFrame对象复制数据（默认为True），即使不需要重建索引也是如此。<br>indicator:将一列添加到名为_merge的输出DataFrame，其中包含有关每行源的信息。 _merge是分类类型，并且对于其合并键仅出现在“左”DataFrame中的观察值，取得值为left_only，对于其合并键仅出现在“右”DataFrame中的观察值为right_only，并且如果在两者中都找到观察点的合并键，则为left_only。</p>
 </blockquote>
-<h5 id="相加"><a href="#相加" class="headerlink" title="相加"></a>相加</h5><p>两个DataFrame相加后，会返回一个新的DataFrame，对应的行和列的值会相加，没有对应的会变成空值NaN</p>
-<h5 id="查看列名"><a href="#查看列名" class="headerlink" title="查看列名"></a>查看列名</h5><p>假定有数据集df，格式为dataframe，现想获取其列名</p>
-<ul>
-<li><p>df.columns：返回的是array格式。</p>
-</li>
-<li><p>list(df)   ：返回list格式，非常方便</p>
-</li>
-<li><p>df.keys()</p>
-</li>
+<h2 id="将数据变为Series类型的数据"><a href="#将数据变为Series类型的数据" class="headerlink" title="将数据变为Series类型的数据"></a>将数据变为Series类型的数据</h2><ul>
+<li>stack()</li>
 </ul>
-<h5 id="查看某一列所有值"><a href="#查看某一列所有值" class="headerlink" title="查看某一列所有值"></a>查看某一列所有值</h5><ul>
-<li>查看某一列唯一值</li>
-</ul>
-<pre class=" language-lang-py"><code class="language-lang-py">dataframe['xxx'].unique()
-</code></pre>
-<ul>
-<li><p>查看某一列所有值（例：查看”Cabin”这列的所有值）</p>
-<pre class=" language-lang-python"><code class="language-lang-python">df['Cabin'].head(3)
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">df.Cabin.head(3)
-</code></pre>
-</li>
-</ul>
-<h5 id="删除多余列"><a href="#删除多余列" class="headerlink" title="删除多余列"></a>删除多余列</h5><ul>
-<li>drop</li>
-</ul>
-<pre class=" language-lang-python"><code class="language-lang-python">DataFrame.drop(labels=None, axis=0, index=None, columns=None, level=None, inplace=False, errors='raise')
-</code></pre>
-<p>参数解释：</p>
-<ol>
-<li><strong>labels</strong>：单个标签或类似列表,要删除的索引或列标签。</li>
-<li>axis：{0或’index’，1或’columns’}，默认0,是从索引（0或“ index”）还是从列（1或“ columns”）中删除标签。axis=0表示行，axis=1表示列</li>
-<li>index：单个标签或类似列表,指定轴的替代方法（<strong>labels, axis=0</strong> is equivalent to <strong>index=labels</strong>）</li>
-<li>columns：单标签或类似列表,指定轴的替代方法(<strong>labels, axis=1</strong> is equivalent to <strong>columns=labels</strong>)</li>
-<li>level：int或级别名称，可选,对于MultiIndex，将从中删除标签的级别。</li>
-<li>inplace：布尔值，默认为False，如果为False，则返回副本。否则，执行就地操作并返回无。</li>
-<li>errors：{‘ignore’，’raise’}，默认为’raise’，如果’ignore’，则抑制错误，仅删除现有标签 。</li>
-</ol>
-<blockquote>
-<p>如果想要完全的删除你的数据结构，使用inplace=True，因为使用inplace就将原数据覆盖了，</p>
-</blockquote>
-<pre class=" language-lang-python"><code class="language-lang-python">df.drop(['B', 'C'], axis=1)
-
-#另一种表达
-df.drop(columns=['B', 'C'])
-
-#还可以这样表达
-df.drop(labels=['B', 'C'], axis=1)
-</code></pre>
-<ul>
-<li>del</li>
-</ul>
-<p>例：删除test中的a列</p>
-<pre class=" language-lang-python"><code class="language-lang-python">del test['a']
-</code></pre>
-<h5 id="条件筛选"><a href="#条件筛选" class="headerlink" title="条件筛选"></a>条件筛选</h5><pre class=" language-lang-python"><code class="language-lang-python">df[df.A==100]
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">df[df["Age"]<10]
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">df[(df.A==100)&(df.B=='a')]  
-# 与
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">df[(df.A==100)|(df.B=='b')]
-#或
-</code></pre>
-<h5 id="重置索引"><a href="#重置索引" class="headerlink" title="重置索引"></a>重置索引</h5><p><strong>reset_index()</strong></p>
-<p>不想保留原来的index，使用参数 drop=True，默认 False。</p>
-<h5 id="标签索引"><a href="#标签索引" class="headerlink" title="标签索引"></a>标签索引</h5><div class="table-container">
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th>loc[]</th>
-<th>基于标签索引选取数据</th>
+<th>参数</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>.iloc[]</td>
-<td>基于整数索引选取数据</td>
+<td>入口参数1</td>
+<td>arrays，用来作为堆叠的<strong>数个</strong>形状维度相等的数组。</td>
+</tr>
+<tr>
+<td>入口参数2</td>
+<td>axis，即指定依照哪个维度进行堆叠，也就是指定哪种方式进行堆叠数组。</td>
+</tr>
+<tr>
+<td>输出</td>
+<td>堆叠后的<strong>1个</strong>数组</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h5 id="按升序按列排序"><a href="#按升序按列排序" class="headerlink" title="按升序按列排序"></a>按升序按列排序</h5><ul>
-<li>.sort_values()</li>
-</ul>
-<p>使用<code>.sort_values()</code>，将单个参数传递给包含要作为排序依据的列的名称的方法。</p>
-<p>DataFrame.sort_values(<em>by</em>=‘##’,<em>axis</em>=0,<em>ascending</em>=True, <em>inplace</em>=False, <em>na_position</em>=‘last’)</p>
-<blockquote>
-<p>参数</p>
-<p>by — 指定列名（axis=0或者’index’）或索引值（axis=1或者’columns’） </p>
-<p>axis — 按行、按列，默认axis=0按指定列排序</p>
-<p> ascending — 是否升序 默认为True </p>
-<p>inplace — 是否修改原对象</p>
-<p> kind — 排序算法 快排quicksort、归并mergesort、堆排序heapsort、稳定排序stable，默认快排 </p>
-<p>na_position — {‘first’, ‘last’} 设定缺失值的显示位置 </p>
-<p>ignore_index — 排序后是否重置索引 </p>
-<p>key — 排序之前使用的函数 （version 1.1.0 后才有该参数）</p>
-</blockquote>
-<ul>
-<li>其他排序方式</li>
-</ul>
-<pre class=" language-lang-python"><code class="language-lang-python"># 让行索引升序排序
-frame.sort_index()
-
-# 让列索引升序排序
-frame.sort_index(axis=1)
-
-# 让列索引降序排序
-frame.sort_index(axis=1, ascending=False)
-
-# 让任选两列数据同时降序排序
-frame.sort_values(by=['a', 'c'], ascending=False)
+<h2 id="数据聚合与运算"><a href="#数据聚合与运算" class="headerlink" title="数据聚合与运算"></a>数据聚合与运算</h2><h3 id="GroupBy机制"><a href="#GroupBy机制" class="headerlink" title="GroupBy机制"></a>GroupBy机制</h3><p><code>groupby</code>的过程就是将原有的<code>DataFrame</code>按照<code>groupby</code>的字段（这里是<code>company</code>），划分为若干个<code>分组DataFrame</code>，被分为多少个组就有多少个<code>分组DataFrame</code>。<strong>所以说，在<code>groupby</code>之后的一系列操作（如<code>agg</code>、<code>apply</code>等），均是基于<code>子DataFrame</code>的操作。</strong></p>
+<p>聚合操作是groupby后非常常见的操作，会写SQL的朋友对此应该是非常熟悉了。聚合操作可以用来求和、均值、最大值、最小值等，下面的表格列出了Pandas中常见的聚合操作。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>min</td>
+<td>最小值</td>
+</tr>
+<tr>
+<td>max</td>
+<td>最大值</td>
+</tr>
+<tr>
+<td>sum</td>
+<td>求和</td>
+</tr>
+<tr>
+<td>mean</td>
+<td>均值</td>
+</tr>
+<tr>
+<td>median</td>
+<td>中位数</td>
+</tr>
+<tr>
+<td>std</td>
+<td>标准差</td>
+</tr>
+<tr>
+<td>var</td>
+<td>方差</td>
+</tr>
+<tr>
+<td>count</td>
+<td>计数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>[例]计算男性与女性的平均票价</p>
+<pre class=" language-lang-python"><code class="language-lang-python">df  = text['Fare'].groupby(text['Sex'])
+means = df.mean()
 </code></pre>
-<h5 id="describe-函数"><a href="#describe-函数" class="headerlink" title="describe()函数"></a><strong>describe()函数</strong></h5><pre class=" language-lang-python"><code class="language-lang-python">DataFrame.describe(percentiles=None, include=None, exclude=None)
+<pre class=" language-lang-python"><code class="language-lang-python">text.groupby('Sex').agg(&#123;'Survived':'sum'&#125;)
 </code></pre>
-<blockquote>
-<p><strong>参数</strong></p>
-<p><strong>percentiles</strong>：赋值类似列表形式，可选<br>表示百分位数，介于0和1之间。默认值为 [.25,.5,.75]，分别返回第25，第50和第75百分位数。 可自定义其它值，用法为df.describe(percentiles=[.xx])。<br><strong>include</strong>：’all’，类似于dtypes列表或None（默认值），可选<br>要包含在结果中的数据类型的白名单。对于<code>Series</code>不可用。以下是选项：<br>‘all’：输入的所有列都将包含在输出中。<br>类似于dtypes的列表：将结果限制为提供的数据类型。将结果限制为数字类型用法：<code>numpy.number</code>。要将其限制为对象列用法：<code>numpy.object</code>。字符串也可以以<code>select_dtypes</code>（例如<code>df.describe(include=[&#39;O&#39;])</code>）的方式使用。要选择分类类型，请使用<code>&#39;category&#39;</code><br>无（默认）：结果将包括所有数字列。<br><strong>exclude</strong>：类似于dtypes列表或None（默认值），可选，<br>要从结果中除去的黑名单数据类型列表。<code>Series</code>不可用。以下是选项：<br>类似于dtypes的列表：从结果中排除提供的数据类型。排除数值类型用法：<code>numpy.number</code>。要排除对象列，使用<code>numpy.object</code>。字符串也可以以<code>select_dtypes</code>（例如<code>df.describe(include=[&#39;O&#39;])</code>）的方式使用。要排除分类类型，请使用<code>&#39;category&#39;</code><br>无（默认）：结果将不包含任何内容。</p>
-<p>count : 样本数据大小<br>mean : 样本数据的平均值<br>std : 样本数据的标准差<br>min : 样本数据的最小值<br>25% : 样本数据25%的时候的值<br>50% : 样本数据50%的时候的值<br>75% : 样本数据75%的时候的值<br>max : 样本数据的最大值</p>
-</blockquote>
-<hr>
+<p>[例]</p>
+<pre class=" language-lang-python"><code class="language-lang-python">text.groupby('Sex').agg(&#123;'Fare': 'mean', 'Pclass': 'count'&#125;).rename(columns=
+                            &#123;'Fare': 'mean_fare', 'Pclass': 'count_pclass'&#125;)
+</code></pre>
+<p>[例]得出不同年龄的总的存活人数，然后找出存活人数最多的年龄段，最后计算存活人数最高的存活率（存活人数/总人数）</p>
+<pre class=" language-lang-py"><code class="language-lang-py">#不同年龄的存活人数
+survived_age = text['Survived'].groupby(text['Age']).sum()
+survived_age.head()
 
+#找出最大值的年龄段
+survived_age[survived_age.values==survived_age.max()]
+
+#首先计算总人数
+_sum = text['Survived'].sum()
+
+print("sum of person:"+str(_sum))
+
+precetn =survived_age.max()/_sum
+
+print("最大存活率："+str(precetn))
+</code></pre>
+<pre><code># 其中
+survived_age = text[&#39;Survived&#39;].groupby(text[&#39;Age&#39;]).sum()
+survived_age等效于gh.Survived
+
+gh=text.groupby(&#39;Age&#39;).agg(&#123;&#39;Survived&#39;:&#39;sum&#39;&#125;)
+gh.Survived
+</code></pre>
                 
             </div>
             <hr/>
@@ -668,7 +611,7 @@ frame.sort_values(by=['a', 'c'], ascending=False)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://anxinui.github.io/2022/08/13/Pandas%E5%85%A5%E9%97%A8/">http://anxinui.github.io/2022/08/13/Pandas%E5%85%A5%E9%97%A8/</a>
+                    <a href="http://anxinui.github.io/2022/08/19/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%9003%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E9%87%8D%E6%9E%84/">http://anxinui.github.io/2022/08/19/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%9003%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E9%87%8D%E6%9E%84/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -881,24 +824,24 @@ frame.sort_values(by=['a', 'c'], ascending=False)
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2022/08/16/Java%E5%9F%BA%E7%A1%8006%E2%80%94%E2%80%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+                <a href="/2022/08/21/SICP01%E2%80%94%E2%80%94Set-up-a-python-environment/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Java基础06——面向对象">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="SICP01——Set up a python environment">
                         
-                        <span class="card-title">Java基础06——面向对象</span>
+                        <span class="card-title">SICP01——Set up a python environment</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Structure and Interpretation of Computer Programs
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-21
                         </span>
                         <span class="publish-author">
                             
@@ -911,8 +854,12 @@ frame.sort_values(by=['a', 'c'], ascending=False)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/SICP/">
+                        <span class="chip bg-color">SICP</span>
+                    </a>
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>
@@ -926,13 +873,13 @@ frame.sort_values(by=['a', 'c'], ascending=False)
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/08/13/Java%E5%9F%BA%E7%A1%8005%E2%80%94%E2%80%94%E5%87%BD%E6%95%B0(%E6%96%B9%E6%B3%95)/">
+                <a href="/2022/08/16/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%9002%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%8F%8A%E7%89%B9%E5%BE%81%E5%A4%84%E7%90%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Java基础05——函数(方法)">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="数据分析02——数据清洗及特征处理">
                         
-                        <span class="card-title">Java基础05——函数(方法)</span>
+                        <span class="card-title">数据分析02——数据清洗及特征处理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -943,7 +890,7 @@ frame.sort_values(by=['a', 'c'], ascending=False)
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-16
                             </span>
                         <span class="publish-author">
                             
@@ -956,8 +903,8 @@ frame.sort_values(by=['a', 'c'], ascending=False)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">数据分析</span>
                     </a>
                     
                 </div>
