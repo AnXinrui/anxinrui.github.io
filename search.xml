@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>计算机组成与结构</title>
+      <link href="/2022/08/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%BB%93%E6%9E%84/"/>
+      <url>/2022/08/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%BB%93%E6%9E%84/</url>
+      
+        <content type="html"><![CDATA[<h1 id="计算机组成与结构"><a href="#计算机组成与结构" class="headerlink" title="计算机组成与结构"></a>计算机组成与结构</h1><h2 id="计组01——逻辑代数基础"><a href="#计组01——逻辑代数基础" class="headerlink" title="计组01——逻辑代数基础"></a>计组01——逻辑代数基础</h2><h3 id="逻辑代数的基本运算"><a href="#逻辑代数的基本运算" class="headerlink" title="逻辑代数的基本运算"></a>逻辑代数的基本运算</h3><ul><li>与(AND)</li></ul><script type="math/tex; mode=display">Y= A\cdot B</script><ul><li>或(OR)</li></ul><script type="math/tex; mode=display">Y=A+B</script><ul><li>非(NOT)</li></ul><script type="math/tex; mode=display">Y= \overline{A}</script><ul><li>与非</li></ul><script type="math/tex; mode=display">Y= \overline{A \cdot B}</script><ul><li>或非</li></ul><script type="math/tex; mode=display">Y= \overline{A+B}</script><ul><li>同或</li></ul><script type="math/tex; mode=display">Y=AB+ \overline{A} \cdot \overline{B} = A \bigodot B</script><ul><li>异或</li></ul><script type="math/tex; mode=display">Y=A \cdot \overline{B} + \overline{A} \cdot B =A \bigoplus B</script><p><img src="https://pic.imgdb.cn/item/63039a1e16f2c2beb125e133.jpg" style="zoom:200%;" /></p><h3 id="逻辑代数的基本常用公式"><a href="#逻辑代数的基本常用公式" class="headerlink" title="逻辑代数的基本常用公式"></a>逻辑代数的基本常用公式</h3><script type="math/tex; mode=display">A \cdot A =A</script><script type="math/tex; mode=display">1+A = A</script><ul><li>吸收公式</li></ul><script type="math/tex; mode=display">A+AB=A</script><ul><li>消因子公式</li></ul><script type="math/tex; mode=display">A+ \overline{A}B=A+B</script><ul><li>消项公式</li></ul><script type="math/tex; mode=display">AB + \overline{A}C+BC=AB+ \overline{A}C</script><ul><li>德摩根定律（反演律）</li></ul><script type="math/tex; mode=display">\overline{A+B}= \overline{A} \cdot \overline{B}</script><script type="math/tex; mode=display">\overline{A \cdot B}=\overline{A} + \overline{B}</script><h3 id="逻辑代数的基本定理"><a href="#逻辑代数的基本定理" class="headerlink" title="逻辑代数的基本定理"></a>逻辑代数的基本定理</h3><ul><li><p><strong>代入定理：</strong>在任何一个包含变量A的逻辑等式中，若以另外一个逻辑式代入式中所有A的位置，则等式仍然成立。</p></li><li><p><strong>对偶定理：</strong>两逻辑式相等，则其对偶式也相等。</p><p>​    <strong>对偶式YD</strong>： <strong>·</strong> 和 <strong>+</strong> 互换，<strong>0</strong> 和 <strong>1</strong> 互换</p></li><li><p><strong>反演定理：</strong>逻辑式 <strong>Y</strong>，其对偶式结果为 <strong>Y’</strong>。</p><p>①先括号、然后乘、最后加。</p><p>②非单变量的反号应保留不变。</p></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计组 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SICP01——Set up a python environment</title>
       <link href="/2022/08/21/SICP01%E2%80%94%E2%80%94Set-up-a-python-environment/"/>
       <url>/2022/08/21/SICP01%E2%80%94%E2%80%94Set-up-a-python-environment/</url>
