@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SICP01——Set up a python environment, Serendipity">
+    <meta name="keywords" content="数据分析04——数据可视化, Serendipity">
     <meta name="description" content="和光同尘，与时舒卷">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SICP01——Set up a python environment | 安同学</title>
+    <title>数据分析04——数据可视化 | 安同学</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">SICP01——Set up a python environment</h1>
+                    <h1 class="description center-align post-title">数据分析04——数据可视化</h1>
                 </div>
             </div>
         </div>
@@ -409,8 +409,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/SICP/">
-                                <span class="chip bg-color">SICP</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                                <span class="chip bg-color">数据分析</span>
                             </a>
                         
                             <a href="/tags/python/">
@@ -450,68 +450,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="SICP01——Set-up-a-python-environment"><a href="#SICP01——Set-up-a-python-environment" class="headerlink" title="SICP01——Set up a python environment"></a>SICP01——<em>Set up a python environment</em></h1><p>基于terminal对python基础的探索</p>
-<h2 id="表达式与语句"><a href="#表达式与语句" class="headerlink" title="　表达式与语句"></a>　表达式与语句</h2><h2 id="1-基本表达式"><a href="#1-基本表达式" class="headerlink" title="1.基本表达式"></a>1.基本表达式</h2><p>基本表达式（Primitive Expressions）只需要一步便可以求得它的值，例如整数、浮点数和布尔值：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">>>> 3
-3
->>> 12.5
-12.5
->>> True
-True
-</code></pre>
-<p>变量名同样也是基本表达式，求值的结果为在当前程序的状态下绑定到的值</p>
-<h2 id="2-布尔值与布尔表达式"><a href="#2-布尔值与布尔表达式" class="headerlink" title="2.布尔值与布尔表达式"></a>2.布尔值与布尔表达式</h2><p>布尔值只有两种值，<code>True</code>和<code>False</code>，表示逻辑上的“真”与“假”。</p>
-<p>例如，我们知道数字1是不等于2的，所以若在Python交互模式中输入<code>1 == 2</code>（这个表达式意思是“1等于2”，在Python中一般用<code>==</code>表示“相等”）， 则会得到它的值为<code>False</code></p>
-<p>能计算出布尔值的表达式我们称之为布尔表达式（Boolean Expression）</p>
-<pre class=" language-lang-python"><code class="language-lang-python">>>> 1 == 2
-False
->>> 1 != 2
-True
-</code></pre>
-<h2 id="3-算术表达式"><a href="#3-算术表达式" class="headerlink" title="3.算术表达式"></a>3.算术表达式</h2><p>可以通过对数字和数学运算符的组合产生复杂的算术表达式（Arithmetic Expression）。 Python中常见的数学运算有<code>+</code>(加)、<code>-</code>(减)、<code>*</code>(乘)、<code>**</code>(乘方)和以下三种：</p>
-<ul>
-<li>浮点除法 (<code>/</code>)：计算第一个数除以第二个数的结果，得到一个浮点数（即使能够整除）。</li>
-<li>下取整除法 (<code>//</code>)：计算第一个数除以第二个数的下取整后的结果，得到一个整数。</li>
-<li>取模 (<code>%</code>)：计算第一个数除以第二个数的余数(&gt;0), 得到一个整数。</li>
+                <h1 id="数据分析04——数据可视化"><a href="#数据分析04——数据可视化" class="headerlink" title="数据分析04——数据可视化"></a>数据分析04——数据可视化</h1><h2 id="Jupyter-Notebook-和绘图有关的几个魔术指令"><a href="#Jupyter-Notebook-和绘图有关的几个魔术指令" class="headerlink" title="Jupyter Notebook 和绘图有关的几个魔术指令"></a>Jupyter Notebook 和绘图有关的几个魔术指令</h2><ul>
+<li>%matplotlib inline：这是默认的模式，输出的图片是静态的</li>
+<li>%matplotlib auto：在这个模式下会弹出一个单独 的绘图窗口，和在pycharm中一样</li>
+<li>%matplotlib notebook：在这个模式下会在notebook中产生一个绘图窗口，能够对图片进行放大缩小等操作。</li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">>>> 1 + 2
-3
->>> 3 - 2
-1
->>> 5 * 6
-30
->>> 7 / 4
-1.75
->>> 7 // 4
-1
->>> 7 % 4
-3
->>> 4**3
-64
+<h2 id="unstack"><a href="#unstack" class="headerlink" title="unstack()"></a>unstack()</h2><h3 id="用法"><a href="#用法" class="headerlink" title="用法:"></a>用法:</h3><pre class=" language-lang-py"><code class="language-lang-py">DataFrame.unstack(level=- 1, fill_value=None)
 </code></pre>
-<p>==当你对运算优先级拿不准的时候，就多加括号！==</p>
-<p>4.赋值语句</p>
-<p>一个赋值语句（Assignment Statement）由一个变量名和一个表达式组成。它会在当前帧（帧的概念后续课程会讲）下把变量名与该表达式的值绑定。</p>
-<pre class=" language-lang-python"><code class="language-lang-python">>>> a = (100 + 50) // 2
-</code></pre>
-<blockquote>
-<p>注意：在Python中，不能对语句进行求值。</p>
-</blockquote>
-<p>5.print</p>
-<p><code>print()</code>是Python3的内置函数，它可以将一个表达式的值输出到终端上（如果还不清楚函数的概念，就单纯记忆一下它的用法吧）。</p>
-<h2 id="文件查找与当前目录的切换"><a href="#文件查找与当前目录的切换" class="headerlink" title="文件查找与当前目录的切换"></a>文件查找与当前目录的切换</h2><h3 id="路径切换"><a href="#路径切换" class="headerlink" title="路径切换"></a>路径切换</h3><pre class=" language-lang-shell"><code class="language-lang-shell">cd ...
-</code></pre>
-<blockquote>
-<p><code>cd</code>的全称是change directory。</p>
-</blockquote>
-<h3 id="当前工作目录下的有哪些目录与文件"><a href="#当前工作目录下的有哪些目录与文件" class="headerlink" title="当前工作目录下的有哪些目录与文件"></a>当前工作目录下的有哪些目录与文件</h3><p>通过<code>dir</code>命令（在Windows上）或<code>ls</code>命令（在macOS和Linux上）显示当前目录下的文件。</p>
-<h3 id="命令的格式"><a href="#命令的格式" class="headerlink" title="命令的格式"></a>命令的格式</h3><pre class=" language-lang-shell"><code class="language-lang-shell">$ executable [-option [parameter]]... [positional-parameter]...
-</code></pre>
-<p>其中：</p>
-<ul>
-<li><code>executable</code>是一个可执行文件，比如在命令<code>python --version</code>中，executable就是<code>python</code>——它正是我们在第一节配置Python环境中所下载的可执行文件。</li>
-<li><code>[-option [parameter]]...</code>的中括号表示“可选”，省略号表示零个或多个。 它们加起来的意思是，<code>executable</code>后面可以跟零个或多个形如<code>-option [parameter]</code>这样的东西，其中<code>-option</code>代表一个选项， <code>-option [parameter]</code>代表选项后面可以跟一个可选的parameter，这视具体的选项而定——有的选项需要parameter，有的就不需要。 <code>- [positional-parameter]...</code>代表零个或多个positional-parameter。 这种positional-parameter与-option parameter中parameter的区别是，它不会跟在选项后面。</li>
-</ul>
+<p>枢轴(必须是分层的)索引标签的级别。</p>
+<p>返回具有新级别列标签的 DataFrame，其 inner-most 级别由旋转索引标签组成。</p>
+<p>如果索引不是 MultiIndex，则输出将是一个系列(当列不是 MultiIndex 时类似于堆栈)。</p>
 
                 
             </div>
@@ -538,7 +486,7 @@ True
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://anxinui.github.io/2022/08/21/SICP01%E2%80%94%E2%80%94Set-up-a-python-environment/">http://anxinui.github.io/2022/08/21/SICP01%E2%80%94%E2%80%94Set-up-a-python-environment/</a>
+                    <a href="http://anxinui.github.io/2022/08/21/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%9004%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/">http://anxinui.github.io/2022/08/21/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%9004%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -576,8 +524,8 @@ True
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/SICP/">
-                                    <span class="chip bg-color">SICP</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                                    <span class="chip bg-color">数据分析</span>
                                 </a>
                             
                                 <a href="/tags/python/">
@@ -751,10 +699,9 @@ True
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
                 <a href="/2022/08/21/SICP01%E2%80%94%E2%80%94Set-up-a-python-environment/">
                     <div class="card-image">
@@ -772,9 +719,9 @@ True
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-21
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-21
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -783,7 +730,6 @@ True
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -806,24 +752,24 @@ True
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/08/21/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%9004%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/">
+                <a href="/2022/08/19/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%9003%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E9%87%8D%E6%9E%84/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="数据分析04——数据可视化">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="数据分析03——数据重构">
                         
-                        <span class="card-title">数据分析04——数据可视化</span>
+                        <span class="card-title">数据分析03——数据重构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            后续会专业学习并补充
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-19
                             </span>
                         <span class="publish-author">
                             
