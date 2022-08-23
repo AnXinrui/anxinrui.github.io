@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>对于pip的些许思考</title>
+      <link href="/2022/08/23/%E5%85%B3%E4%BA%8Epip%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2022/08/23/%E5%85%B3%E4%BA%8Epip%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="对于pip的些许思考"><a href="#对于pip的些许思考" class="headerlink" title="对于pip的些许思考"></a>对于pip的些许思考</h1><p>错过了春花会有夏风，错过了秋实会有冬雪，错过了会有遇见，遇见了还是错过。望着窗外，我想起了今天上了本学期第一节python课程，老师主要讲解了利用IDLE和Terminal运行python代码，最后讲解了利用pip来管理python的扩展库。在课下我通过查阅书籍与gooogle，去探寻python中pip这一环节。<br><a href="https://pypi.org/project/pip/">pip链接</a><br>如果你在<a href="https://www.python.org/">python.org </a>下载最新版本的安装包，则是已经自带pip工具。</p><blockquote><p>注意：Python 2.7.9 + 或 Python 3.4+ 以上版本都自带 pip 工具。</p></blockquote><p>可以通过以下命令来判断是否已安装：</p><pre><code>pip --version     # Python2.x 版本命令pip3 --version    # Python3.x 版本命令</code></pre><h3 id="常用pip子命令使用方法"><a href="#常用pip子命令使用方法" class="headerlink" title="常用pip子命令使用方法"></a>常用pip子命令使用方法</h3><ul><li><pre><code>pip freeze</code></pre><p>列出已安装模板及版本号</p></li></ul><pre><code>  pip freeze &gt; packages.txt</code></pre><p>  把扩展库信息保存到packages.txt文件中</p><ul><li><pre><code>pip install SomePackage</code></pre><p>在线安装最新的SomePackage 模块，如opencv-python,pandas,numpy,scipy……</p><pre><code>pip install SomePackage==1.0.4</code></pre><p>在线安装指定版本的SomePackage 模块</p><pre><code>pip install &#39;SomePackage&gt;=1.0.4&#39;</code></pre><p>在线安装最小版本的SomePackage 模块</p></li></ul><p>  如果我想要安装numpy的最新版本，需要执行</p><pre class=" language-lang-shell"><code class="language-lang-shell">  pip install numpy</code></pre><p>  我要安装 Django。用以下的一条命令就可以，方便快捷。</p><pre><code>  pip install Django==1.7</code></pre><ul><li><pre><code>pip install SomePackage.whl</code></pre><p>通过whl文件离线安装扩展库</p><blockquote><p>步骤如下：</p><p>1.下载所需包的whl文件，可以到通过<strong><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">Archived: Python Extension Packages for Windows - Christoph Gohlke (uci.edu)</a></strong>去找自己所需的包对应的<strong>whl</strong>文件</p><p>2.安装wheel模块：</p><p>在命令行窗口使用命令<strong><code>pip install wheel</code> 在线安装wheel模块</strong></p><p>3.安装whl文件：</p><p>在命令行窗口用cd命令跳转到<strong>whl</strong>文件所在目录，然后使用命令</p><pre><code>pip install SomePackage.whl</code></pre><p>即可完成<strong>whl</strong>文件的安装。</p></blockquote></li></ul><ul><li>```<br>pip install -r packages.txt</li></ul><p>从txt文件中批量安装扩展库</p><blockquote><p>步骤如下：</p><p>1.新建  packages.txt</p><p>2.在txt文档中将所需要的包列出。如需指定版本，用==说明</p><pre><code>numpypandassklearnmatplotlibgymstable_baselinesoptunatastatsmodels==0.10.0rc2empyricalccxtpsycopg2configparserquantstats&gt;=0.0.17</code></pre><p>3.打开cmd，进入目标路径,输入以下代码，即可从txt文件中批量安装扩展库</p><pre><code>cd &quot;packages.txt文件所在路径“pip install -r requirements.txt</code></pre></blockquote><ul><li>升级 SomePackage模块</li></ul><pre><code>pip install --upgrade SomePackage</code></pre><p>​        升级指定的模块，通过使用==, &gt;=, &lt;=, &gt;, &lt; 来指定一个版本号</p><ul><li>卸载SomePackage模块</li></ul><pre><code>pip uninstall SomePackage</code></pre><p>通过使用==, &gt;=, &lt;=, &gt;, &lt; 来指定一个版本号</p><h3 id="pip常用命令"><a href="#pip常用命令" class="headerlink" title="pip常用命令"></a>pip常用命令</h3><ul><li>显示版本和路径<pre><code>pip --version</code></pre></li><li>获取帮助<pre><code>pip --help</code></pre></li><li>升级 pip<pre><code>pip install -U pip</code></pre><blockquote><p>如果这个升级命令出现问题 ，可以使用以下命令：</p><pre><code>sudo easy_install --upgrade pip</code></pre></blockquote></li><li>搜索包<pre><code>pip search SomePackage</code></pre></li><li>显示安装包信息<pre><code>pip show</code></pre></li><li>查看指定包的详细信息<pre><code>pip show -f SomePackage</code></pre></li><li>列出已安装的包<pre><code>pip list</code></pre></li><li>查看可升级的包<pre><code>pip list -o</code></pre></li></ul><p>pip的学习让我收货许多，我对于我的python学习充满了信心。细看来，终是错过了春花秋实，遇见了夏风冬雪。原来错过就真的错过了！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>计算机组成与结构</title>
       <link href="/2022/08/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%BB%93%E6%9E%84/"/>
       <url>/2022/08/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%BB%93%E6%9E%84/</url>
