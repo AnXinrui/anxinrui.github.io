@@ -491,11 +491,11 @@ A+ \overline{A}B=A+B</script><ul>
 <script type="math/tex; mode=display">
 A+A=A</script><script type="math/tex; mode=display">
 A \cdot A=A</script><ul>
-<li>消项公式</li>
+<li><em>消项公式</em></li>
 </ul>
 <script type="math/tex; mode=display">
 AB + \overline{A}C+BC=AB+ \overline{A}C</script><ul>
-<li>德摩根定律（反演律）</li>
+<li>==德摩根定律（反演律）==</li>
 </ul>
 <script type="math/tex; mode=display">
 \overline{A+B}= \overline{A} \cdot \overline{B}</script><script type="math/tex; mode=display">
@@ -513,13 +513,17 @@ AB + \overline{A}C+BC=AB+ \overline{A}C</script><ul>
 <h3 id="逻辑函数化简"><a href="#逻辑函数化简" class="headerlink" title="逻辑函数化简"></a>逻辑函数化简</h3><h4 id="化简原则"><a href="#化简原则" class="headerlink" title="　化简原则"></a>　化简原则</h4><p>1、逻辑电路所用的门要少（表达式中乘积项要少）；</p>
 <p> 2、每个门的输入端要少（乘积项中的因子要少）；</p>
 <p> 3、逻辑电路所用的级数要少。</p>
-<h4 id="卡诺图化简法"><a href="#卡诺图化简法" class="headerlink" title="卡诺图化简法"></a>卡诺图化简法</h4><h5 id="最小项"><a href="#最小项" class="headerlink" title="最小项"></a>最小项</h5><h6 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h6><p>设某逻函有ｎ个变量，ｍ是ｎ个变量的一个乘积 项，若ｍ中每个变量以原变量或反变量的形式出现一次且只出 现一次，则ｍ称为这个逻函的一个最小项</p>
+<h4 id="卡诺图化简法"><a href="#卡诺图化简法" class="headerlink" title="卡诺图化简法"></a>卡诺图化简法</h4><h5 id="卡诺图真值表区别"><a href="#卡诺图真值表区别" class="headerlink" title="卡诺图真值表区别"></a>卡诺图真值表区别</h5><ul>
+<li>真值表：包含所有最小项，但几何位置相邻的最小项不一定逻辑相邻</li>
+<li>卡诺图：所有最小项，几何位置相邻且逻辑相邻</li>
+</ul>
+<h5 id="最小项"><a href="#最小项" class="headerlink" title="最小项"></a>最小项</h5><h6 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h6><p>设某逻函有ｎ个变量，ｍ是ｎ个变量的一个乘积 项，若ｍ中每个变量以原变量或反变量的形式出现一次且只出 现一次，则ｍ称为这个逻函的一个最小项</p>
 <h6 id="最小项性质"><a href="#最小项性质" class="headerlink" title="最小项性质"></a>最小项性质</h6><p>①、ｎ个变量必有且仅有2n个最小项 </p>
 <p>②、所有最小项之和恒等于1 </p>
 <p>③、任意两个最小项的乘积为0 </p>
 <p>④、具有相邻性的两个最小项之和可以合并成一项并消去 一对因子</p>
 <p> 若两个最小项只有一个因子不同，则称这两个最小项具有 相邻性。这两个最小项相加时定能合并成一项并将一对不 同的因子消去$ \overline{A}B\overline{C}=((\overline{A}+A)B\overline{C}=B\overline{C}$</p>
-<h6 id="化简原则-1"><a href="#化简原则-1" class="headerlink" title="化简原则"></a>化简原则</h6><ul>
+<h6 id="化简原则——“圈‘1’法”"><a href="#化简原则——“圈‘1’法”" class="headerlink" title="化简原则——“圈‘1’法”"></a>化简原则——“圈‘1’法”</h6><ul>
 <li><p>被圈最小项数应等于$2^n$个</p>
 </li>
 <li><p>最小项可被重复圈但不能遗漏（覆盖卡诺图所有的1）</p>
@@ -527,6 +531,7 @@ AB + \overline{A}C+BC=AB+ \overline{A}C</script><ul>
 <li>所用的乘积项数目最少（矩形圈最少）</li>
 <li>每个乘积项包含的因子最少（单个矩形圈尽量大）</li>
 </ul>
+<p>​                    </p>
 
                 
             </div>
