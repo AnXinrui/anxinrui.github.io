@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python——序列学习, Serendipity">
+    <meta name="keywords" content="Serendipity">
     <meta name="description" content="和光同尘，与时舒卷">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python——序列学习 | 安同学</title>
+    <title>安同学</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -292,12 +292,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python——序列学习</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -411,13 +411,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -429,7 +425,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-09-06
+                    2022-11-20
                 </div>
                 
 
@@ -450,217 +446,39 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="python——序列学习"><a href="#python——序列学习" class="headerlink" title="python——序列学习"></a>python——序列学习</h1><p>Python中常用的序列结构有列表、元组、字符串，字典、集合以及range、zip、 filter等对象也支持很多类似的</p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><img src="https://img-blog.csdnimg.cn/5e97d648a6dc416a9ec8a14c9c25ebea.png" alt="如图"><br><img src="https://img-blog.csdnimg.cn/9d2dc3b3f3484aceba178428dd7ea673.png" alt="如图"></p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="创建、修改与删除"><a href="#创建、修改与删除" class="headerlink" title="创建、修改与删除"></a>创建、修改与删除</h3><ul>
-<li>创建<pre class=" language-lang-python"><code class="language-lang-python">l=['a','v','f']
-list(range(1,13))
-list=[] #创建空列表
-list('hello world')
-</code></pre>
-<blockquote>
-<p>不要使用list作为变量名，会影响 <code>list</code>这一方法的正常使用<br><img src="https://img-blog.csdnimg.cn/0b8c84d89e6549d482176874e27df715.png" alt="在这里插入图片描述"></p>
-</blockquote>
-</li>
-<li>增加、修改<pre class=" language-lang-python"><code class="language-lang-python">>>> aList = [3,4,5]
->>> aList = aList + [7]
->>> aList
-[3, 4, 5, 7]
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">>>> aList.append(9)
->>> aList
-[3, 4, 5, 7, 9]
-</code></pre>
-使用列表对象的append()方法在当前列表尾部追加元素，原地修改列表，<br>是真正意义上的在列表尾部添加元素，速度较快。<blockquote>
-<p>如果是通过下标来修改序列中元素的值或通过可变序列对象自身提供的方法来增加和删除元<br>素时，序列对象在内存中的起始地址是不变的，仅仅是被改变值的元素地址发生变化，也就<br>是所谓的“原地操作”。</p>
-<pre class=" language-lang-python"><code class="language-lang-python">>> a = [1, 2, 3]
->> id(a)
-2389572193096
->> a.append(4)
->> a.remove(3)
->> a[0] = 5
->> a
-[5, 2, 4]
->> id(a)
-2389572193096
-</code></pre>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>使用列表对象的extend()方法可以将另一个可迭代对象的所有元素添加至该列表对象尾部。通过extend()方法来增加列表元素也不改变其内存首地址，属于原地操作。</p>
-<pre class=" language-lang-python"><code class="language-lang-python">>>> aList = [3, 4, 5, 7, 9]
->> aList.extend([11,13])
->> aList
-[3, 4, 5, 7, 9, 11, 13]
->> aList.extend((15,17))
->> aList
-[3, 4, 5, 7, 9, 11, 13, 15, 17]
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">>> x = [] #运算符+=类似于列表的extend()方法。
->> x += '1234'
->> x
-['1', '2', '3', '4']
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">>> aList.insert(3, 6) #在下标为3的位置插入元素6
->> aList
-[3, 4, 5, 6, 7, 9, 11, 13, 15, 17]
-</code></pre>
-</blockquote>
-<ul>
-<li>删除<pre class=" language-lang-python"><code class="language-lang-python">del a_list[3]
-</code></pre>
-</li>
-</ul>
-<p>使用列表的pop()方法删除并返回指定位置（默认为最后一个）上的元素，<br>如果给定的索引超出了列表的范围则抛出异常。</p>
-<pre class=" language-lang-py"><code class="language-lang-py">a_list.pop()
-a_list.pop(1)
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">a_list.remove(7)
-</code></pre>
-<h3 id="切片操作"><a href="#切片操作" class="headerlink" title="切片操作"></a>切片操作</h3><p>切片使用2个冒号分隔的3个数字来完成：</p>
-<ul>
-<li>第一个数字表示切片开始位置（默认为0）。</li>
-<li>第二个数字表示切片截止（但不包含）位置（默认为列表长度）。</li>
-<li>第三个数字表示切片的步长（默认为1），当步长省略时可以顺便省略最后一个冒号。<br>【例】<pre class=" language-lang-python"><code class="language-lang-python">>>> aList = [3, 4, 5, 6, 7, 9, 11, 13, 15, 17]
->>> aList[::] #返回包含所有元素的新列表
-[3, 4, 5, 6, 7, 9, 11, 13, 15, 17]
->>> aList[::-1] #逆序的所有元素
-[17, 15, 13, 11, 9, 7, 6, 5, 4, 3]
->>> aList[::2] #偶数位置，隔一个取一个
-[3, 5, 7, 11, 15]
->>> aList[1::2] #奇数位置，隔一个取一个
-[4, 6, 9, 13, 17]
->>> aList[3::] #从下标3开始的所有元素
-[6, 7, 9, 11, 13, 15, 17]
->>> aList[3:6] #下标在[3, 6)之间的所有元素
-[6, 7, 9]
->>> aList[0:100:1] #前100个元素，自动截断
-[3, 4, 5, 6, 7, 9, 11, 13, 15, 17]
->>> aList[100:] #下标100之后的所有元素，自动截断
-[]
-</code></pre>
-<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3>```py<blockquote>
-<blockquote>
-<blockquote>
-<p>aList.sort() #默认是升序排序</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>aList.sort(reverse=True) #降序排序</p>
-<p>aList.reverse() #原地逆序</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>### 其他
-自行复习
-- 用于序列操作的常用内置函数 
-- 列表推导式
-- 使用列表实现向量运算
-- 切片+filter()
+                <h1 id="时间计算"><a href="#时间计算" class="headerlink" title="时间计算"></a>时间计算</h1><pre class=" language-lang-c++"><code class="language-lang-c++">#include <stdio.h>      /* printf */
+#include <time.h>       /* time_t, struct tm, difftime, time, mktime */
+#include<iostream>
+using namespace std;
+class Date&#123;
+private:
+    int year, mon, day;
+public:
+     Date(int x,int y, int z) : year(x),mon(y),day(z)&#123;&#125;;
+     void getDays()&#123;
+         struct tm ndate;
+         time_t now;
+         double seconds;
+         time(&now);
+         ndate.tm_hour = 0; ndate.tm_min = 0; ndate.tm_sec = 0;
+          ndate.tm_mon = mon - 1;  ndate.tm_mday = day;
+          ndate.tm_year = year - 1900;
+          long long days = (difftime(now, mktime(&ndate)) / 3600 / 24);
+          //cout<<difftime(now, mktime(&ndate)) / 3600 / 24<<endl;
+          cout << days<<endl;
+     &#125;
+&#125;;
 
-## 元组
- 元组和列表类似，但属于不可变序列，元组一旦创建，用任何方法都不可以修改其元素。元组的定义方式和列表相同，但定义时所有元素是放在一对圆括号“（）”中，而不是方括号中。
- ### 创建与删除
- ```py
- &gt;&gt;&gt; tuple(&#39;abcdefg&#39;) #把字符串转换为元组
-(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;)
-&gt;&gt;&gt; aList
-[-1, -4, 6, 7.5, -2.3, 9, -11]
-&gt;&gt;&gt; tuple(aList) #把列表转换为元组
-(-1, -4, 6, 7.5, -2.3, 9, -11)
-&gt;&gt;&gt; s = tuple() #空元组
-&gt;&gt;&gt; s
-()
-</code></pre><blockquote>
-<p>使用del可以删除元组对象，不能删除元组中的元素</p>
-</blockquote>
-<h3 id="元组与列表的区别"><a href="#元组与列表的区别" class="headerlink" title="元组与列表的区别"></a>元组与列表的区别</h3><ul>
-<li>元组一旦定义就不允许更改。 </li>
-<li>元组没有append()、extend()和insert()等方法，无法向元组中添加元素。 </li>
-<li>元组没有remove()或pop()方法，也无法对元组元素进行del操作，不能从元组<br>中删除元素</li>
-<li>元组一旦定义就不允许更改。 </li>
-<li>元组没有append()、extend()和insert()等方法，无法向元组中添加元素。 </li>
-<li>元组没有remove()或pop()方法，也无法对元组元素进行del操作，不能从元组<br>中删除元素</li>
-</ul>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
-<li>序列解包</li>
-<li>生成器推导式</li>
-</ul>
-<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><ul>
-<li>字典是无序、可变序列。</li>
-<li>字典中的键可以为任意不可变数据，比如整数、实数、复数、字符串、元组等<br>等。</li>
-<li>globals()返回包含当前作用域内所有全局变量和值的字典。</li>
-<li>locals()返回包含当前作用域内所有局部变量和值的字典。<h3 id="创建与删除"><a href="#创建与删除" class="headerlink" title="创建与删除"></a>创建与删除</h3><pre class=" language-lang-python"><code class="language-lang-python">>>> a_dict = &#123;'server': 'db.diveintopython3.org', 'database': 'mysql'&#125;
->>> x = &#123;&#125; #空字典
+int main ()
+&#123;
+    int x,y,z;
+    cin>>x>>y>>z;
+    cout<<"天数："; 
+    Date aday(x,y,z);
+    aday.getDays() ;
+    return 0;
+&#125;
 </code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">>>> keys = ['a', 'b', 'c', 'd']
->>> values = [1, 2, 3, 4]
->>> dictionary = dict(zip(keys, values))
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">d = dict(name='Dong', age=37)
-</code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">adict = dict.fromkeys(['name', 'age', 'sex'])#以给定内容为键，创建值为空的字典
-</code></pre>
-<blockquote>
-<ul>
-<li>使用del删除整个字典</li>
-<li>使用del删除字典中指定键的元素</li>
-<li>使用字典对象的clear()方法来删除字典中所有元素</li>
-<li>使用字典对象的pop()方法删除并返回指定键的元素</li>
-<li>使用字典对象的popitem()方法删除并返回字典中的一个元素</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><ul>
-<li>无序、可变序列</li>
-<li>元素不可重复</li>
-<li>只能包含数字、字符串、元组等不可变类型（或者说可哈希）的数据，<br>而不能包含列表、字典、集合等可变类型的数据</li>
-</ul>
-<h3 id="创建与删除-1"><a href="#创建与删除-1" class="headerlink" title="创建与删除"></a>创建与删除</h3><pre class=" language-lang-py"><code class="language-lang-py">a_set = set(range(8,14))
- a = &#123;3, 5&#125;
-</code></pre>
-<blockquote>
-<p>当不再使用某个集合时，可以使用del命令删除整个集合。集合对象的pop()方<br>法弹出并删除其中一个元素，remove()方法直接删除指定元素，clear()方法<br>清空集合。</p>
-<pre class=" language-lang-py"><code class="language-lang-py">>> a = &#123;1, 4, 2, 3&#125;
->> a.pop()
-1
->> a.pop()
-2
->> a
-&#123;3, 4&#125;
->> a.add(2)
->> a
-&#123;2, 3, 4&#125;
->> a.remove(3)
->> a
-&#123;2, 4&#125;
-</code></pre>
-<h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><pre class=" language-lang-python"><code class="language-lang-python">>> a_set = set([8, 9, 10, 11, 12, 13])
->> b_set = &#123;0, 1, 2, 3, 7, 8&#125;
->> a_set | b_set #并集
-&#123;0, 1, 2, 3, 7, 8, 9, 10, 11, 12, 13&#125;
->> a_set & b_set #交集
-&#123;8&#125;
->> a_set - b_set
-&#123;9, 10, 11, 12, 13&#125;
->> a_set ^ b_set #对称差集
-&#123;0, 1, 2, 3, 7, 9, 10, 11, 12, 13&#125;
-</code></pre>
-</blockquote>
-<h2 id="总而言之"><a href="#总而言之" class="headerlink" title="总而言之"></a>总而言之</h2><pre><code>       1、list、tuple是有序列表；dict、set是无序列表
-</code></pre><p>　　   2、list元素可变、tuple元素不可变</p>
-<p>　　   3、dict和set的key值不可变，唯一性</p>
-<p>　　   4、set只有key没有value</p>
-<p>　　   5、set的用途：去重、并集、交集等</p>
-<p>　　   6、list、tuple：+、*、索引、切片、检查成员等</p>
-<p>　　　7、dict查询效率高，但是消耗内存多；list、tuple查询效率低、但是消耗内存少</p>
 
                 
             </div>
@@ -687,7 +505,7 @@ a_list.pop(1)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://anxinui.github.io/2022/09/06/2021001438_%E5%AE%89%E6%AC%A3%E9%94%90/">http://anxinui.github.io/2022/09/06/2021001438_%E5%AE%89%E6%AC%A3%E9%94%90/</a>
+                    <a href="http://anxinui.github.io/2022/11/20/C/">http://anxinui.github.io/2022/11/20/C/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -724,11 +542,7 @@ a_list.pop(1)
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
-                                </a>
-                            
+                            <span class="chip bg-color">No tag</span>
                         </div>
                     
                 </div>
@@ -770,9 +584,10 @@ a_list.pop(1)
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2022/11/20/C/">
                     <div class="card-image">
@@ -790,9 +605,9 @@ a_list.pop(1)
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -801,6 +616,7 @@ a_list.pop(1)
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -811,24 +627,24 @@ a_list.pop(1)
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/08/24/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">
+                <a href="/2022/09/06/2021001438_%E5%AE%89%E6%AC%A3%E9%94%90/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="离散数学">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="python——序列学习">
                         
-                        <span class="card-title">离散数学</span>
+                        <span class="card-title">python——序列学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            会坚持更新的~
+                            python第二次作业，查询了大量资料，代码大多来自《python程序设计》
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-06
                             </span>
                         <span class="publish-author">
                             
@@ -841,8 +657,8 @@ a_list.pop(1)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%A6%BB%E6%95%A3/">
-                        <span class="chip bg-color">离散</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>

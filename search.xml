@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2022/11/20/C/"/>
+      <url>/2022/11/20/C/</url>
+      
+        <content type="html"><![CDATA[<h1 id="时间计算"><a href="#时间计算" class="headerlink" title="时间计算"></a>时间计算</h1><pre class=" language-lang-c++"><code class="language-lang-c++">#include <stdio.h>      /* printf */#include <time.h>       /* time_t, struct tm, difftime, time, mktime */#include<iostream>using namespace std;class Date&#123;private:    int year, mon, day;public:     Date(int x,int y, int z) : year(x),mon(y),day(z)&#123;&#125;;     void getDays()&#123;         struct tm ndate;         time_t now;         double seconds;         time(&now);         ndate.tm_hour = 0; ndate.tm_min = 0; ndate.tm_sec = 0;          ndate.tm_mon = mon - 1;  ndate.tm_mday = day;          ndate.tm_year = year - 1900;          long long days = (difftime(now, mktime(&ndate)) / 3600 / 24);          //cout<<difftime(now, mktime(&ndate)) / 3600 / 24<<endl;          cout << days<<endl;     &#125;&#125;;int main ()&#123;    int x,y,z;    cin>>x>>y>>z;    cout<<"天数：";     Date aday(x,y,z);    aday.getDays() ;    return 0;&#125;</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python——序列学习</title>
       <link href="/2022/09/06/2021001438_%E5%AE%89%E6%AC%A3%E9%94%90/"/>
       <url>/2022/09/06/2021001438_%E5%AE%89%E6%AC%A3%E9%94%90/</url>
