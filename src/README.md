@@ -3,8 +3,9 @@ home: true
 layout: BlogHome
 icon: home
 title: Starry
-heroImage: https://theme-hope-assets.vuejs.press/logo.svg
+# heroImage: './assets/blog-avatar.png'
 heroText: StarryBlog
+bgImage: 'https://cn.bing.com/th?id=OHR.ZafraCastle_EN-US5032917939_UHD.jpg'
 heroFullScreen: true
 tagline: The moon was dimmed by clouds and the stars were darkened.
 # projects:
