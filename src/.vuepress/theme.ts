@@ -31,7 +31,7 @@ export default hopeTheme({
 
   // 博客相关
   blog: {
-    description: "一个后端开发者，算法爱好者",
+    description: "夫唯不争，故天下莫能与之争",
     intro: "/intro.html",
     medias: {
       // Baidu: "https://example.com",
