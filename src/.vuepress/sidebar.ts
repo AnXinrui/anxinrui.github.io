@@ -7,30 +7,9 @@ export default sidebar({
       text: "解题报告",
       icon: "lightbulb",
       prefix: "solutionReport/",
-      link: "demo/",
+      link: "solutionReport/",
       children: "structure",
     },
   ],
-  "/demo/": [
-    "",
-    {
-      text: "如何使用",
-      icon: "laptop-code",
-      prefix: "demo/",
-      link: "demo/",
-      children: "structure",
-    },
-    {
-      text: "文章",
-      icon: "book",
-      prefix: "posts/",
-      children: "structure",
-    },
-    "intro",
-    {
-      text: "幻灯片",
-      icon: "person-chalkboard",
-      link: "https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/demo.html",
-    },
-  ],
+
 });
