@@ -12,17 +12,17 @@ export const siteConfig: SiteConfig = {
 	subtitle: "个人博客",
 	lang: "zh_CN", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
 	themeColor: {
-		hue: 250, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
+		hue: 210, // Teal-cyan neon tone matching NEO TOKYO NOIR banner
 		fixed: false, // Hide the theme color picker for visitors
 	},
 	banner: {
-		enable: false,
-		src: "assets/images/demo-banner.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
+		enable: true,
+		src: "assets/images/neo-tokyo-noir-banner.webp",
+		position: "center",
 		credit: {
-			enable: false, // Display the credit text of the banner image
-			text: "", // Credit text to be displayed
-			url: "", // (Optional) URL link to the original artwork or artist's page
+			enable: true,
+			text: "空色天絵 / NEO TOKYO NOIR 01",
+			url: "https://www.pixiv.net/artworks/111024784",
 		},
 	},
 	toc: {
