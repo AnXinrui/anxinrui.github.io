@@ -1,0 +1,18 @@
+---
+description: 构建与 GitHub Pages 部署
+globs: .github/**,astro.config.mjs,package.json
+alwaysApply: false
+---
+
+# 部署
+
+- **GitHub Pages** + Actions：push `main` 触发 `.github/workflows/deploy.yml`
+- `astro.config.mjs`：`site: "https://anxinrui.github.io/"`，`base: "/"`（username.github.io 无需 base 前缀）
+- 构建命令：`pnpm build`（含 pagefind 搜索索引）
+- push 用 SSH：`git@github.com:AnXinrui/anxinrui.github.io.git`
+- 站点未更新时：仓库 Settings → Pages → Source 选 **GitHub Actions**
+
+## 禁止
+
+- 未经用户明确要求：`git push --force`、改 git config
+- 不要改 `pnpm-lock.yaml` 除非确实更新了依赖

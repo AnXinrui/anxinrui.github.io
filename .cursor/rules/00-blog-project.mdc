@@ -1,0 +1,55 @@
+---
+description: anxinrui 博客项目上下文（Fuwari/Astro/GitHub Pages）
+alwaysApply: true
+---
+
+# 博客项目速览
+
+个人博客，基于 [Fuwari](https://github.com/saicaca/fuwari)（Astro 5 + Svelte + Tailwind + Pagefind）。
+
+| 项 | 值 |
+|---|---|
+| 站点 | https://anxinrui.github.io/ |
+| 仓库 | `AnXinrui/anxinrui.github.io` |
+| 远程 | `git@github.com:AnXinrui/anxinrui.github.io.git` |
+| 语言 | `zh_CN`（界面与正文默认中文） |
+| 包管理 | **pnpm**（`preinstall` 禁止 npm/yarn） |
+
+## 关键路径
+
+| 改什么 | 文件 |
+|--------|------|
+| 站点标题/Banner/主题色/导航/头像 | `src/config.ts` |
+| 关于页 | `src/content/spec/about.md` |
+| 博文 | `src/content/posts/` |
+| 界面文案 | `src/i18n/languages/zh_CN.ts` |
+| Banner 高度 | `src/constants/constants.ts`（默认 35vh + 30vh 延展） |
+| 部署 | `.github/workflows/deploy.yml` |
+| 站点 URL | `astro.config.mjs` → `site` / `base: "/"` |
+
+## 当前状态（有变请同步更新本规则）
+
+- 博文：仅 `src/content/posts/fuwari-guide.md`
+- Banner：已启用，`neo-tokyo-noir-banner.webp`，`position: center`，hue `210`
+- 作者：xinrui.an，GitHub `anxinrui`
+
+## 常用命令
+
+```bash
+pnpm dev          # 本地 http://localhost:4321
+pnpm build        # 构建 + pagefind 索引
+pnpm new-post <名> # 新建文章
+```
+
+## 协作约定
+
+- 中文回复，称呼用户「帅哥」；最小改动，不顺手重构
+- **不要**写 README/文档/测试，除非明确要求
+- **不要**主动 commit/push，用户明确要求才做
+- commit 风格：`feat:` / `fix:` + 中文，参考 `git log`
+- 这是 Astro/TS 项目，**不适用** Java 规范
+- UI/视觉任务可先看 `.agents/skills/`（如 `design-taste-frontend`）
+
+## 规则维护
+
+项目结构、部署方式、关键约定变更后，**主动更新** `.cursor/rules/*.mdc`，保持每条 ≤50 行、信息密度高，避免重复 README。

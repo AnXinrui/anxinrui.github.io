@@ -1,0 +1,43 @@
+---
+description: 博文与内容编辑约定
+globs: src/content/**,src/config.ts,src/i18n/**
+alwaysApply: false
+---
+
+# 内容编辑
+
+## 新建文章
+
+```bash
+pnpm new-post my-article
+```
+
+文件位于 `src/content/posts/`，支持子目录（`posts/foo/index.md` + 同目录资源）。
+
+## Front-matter
+
+```yaml
+---
+title: 标题
+published: 2026-06-26
+description: 摘要（首页展示）
+image: ./cover.jpg   # 可选
+tags: [标签]
+category: 分类
+draft: false         # true 不公开
+---
+```
+
+## Markdown 扩展（Fuwari 内置）
+
+- GitHub 卡片：`::github{repo="owner/repo"}`
+- 提示块：`:::note` / `:::tip` / `:::warning` 等
+- 剧透：`:spoiler[隐藏内容]`
+- 代码块：Expressive Code（`title=`、`del={}`、`ins={}`、`showLineNumbers` 等）
+- 视频：直接粘贴 `<iframe>` 到正文
+
+## 注意
+
+- 分类/标签用中文，与侧边栏筛选一致
+- 图片放 `src/assets/images/` 或文章同目录；Banner 图在 `config.ts` 配置
+- 改 UI 固定文案优先改 `zh_CN.ts`，不要硬编码英文
