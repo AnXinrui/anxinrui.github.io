@@ -2,7 +2,7 @@
 title: Fuwari 博客写作指南
 published: 2026-06-26
 description: 本博客使用说明：Markdown 语法、扩展功能、代码块与视频嵌入，一文汇总。
-tags: [Fuwari, 博客, Markdown]
+tags: [Fuwari]
 category: 指南
 draft: false
 ---
