@@ -1,12 +1,12 @@
 ---
-import type { GetStaticPaths } from "astro";
-import MomentPage from "@components/MomentPage.astro";
 import Pagination from "@components/control/Pagination.astro";
+import MomentPage from "@components/MomentPage.astro";
+import { MOMENT_PAGE_SIZE } from "@constants/constants";
 import I18nKey from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
-import { MOMENT_PAGE_SIZE } from "@constants/constants";
 import { getSortedMoments } from "@utils/content-utils";
+import type { GetStaticPaths } from "astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allMoments = await getSortedMoments();

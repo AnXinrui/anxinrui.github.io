@@ -12,7 +12,12 @@ interface Props {
 	uncategorized?: boolean;
 }
 
-const { sortedPosts, tags = [], categories = [], uncategorized = false } = Astro.props;
+const {
+	sortedPosts,
+	tags = [],
+	categories = [],
+	uncategorized = false,
+} = Astro.props;
 
 let filteredPosts = sortedPosts;
 

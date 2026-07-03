@@ -10,7 +10,8 @@ alwaysApply: false
 - `astro.config.mjs`：`site: "https://anxinrui.github.io/"`，`base: "/"`（username.github.io 无需 base 前缀）
 - 构建命令：`pnpm build`（含 pagefind 搜索索引）
 - push 用 SSH：`git@github.com:AnXinrui/anxinrui.github.io.git`
-- 站点未更新时：仓库 Settings → Pages → Source 选 **GitHub Actions**
+- 站点未更新时：仓库 Settings → Pages → Source 选 **GitHub Actions**（不要选 Deploy from a branch / Jekyll）
+- `public/.nojekyll`：禁用 GitHub Pages 的 Jekyll 后处理，避免 `_astro` 目录失效
 
 ## 禁止
 

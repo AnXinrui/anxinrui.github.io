@@ -1,10 +1,10 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import path from "node:path";
-import Markdown from "./misc/Markdown.astro";
-import ImageWrapper from "./misc/ImageWrapper.astro";
 import { formatDateTime } from "../utils/date-utils";
 import { getDir } from "../utils/url-utils";
+import ImageWrapper from "./misc/ImageWrapper.astro";
+import Markdown from "./misc/Markdown.astro";
 
 interface Props {
 	entry: CollectionEntry<"moments">;

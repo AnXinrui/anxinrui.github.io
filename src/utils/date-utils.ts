@@ -2,7 +2,13 @@ const TZ = "Asia/Shanghai";
 
 function getParts(
 	date: Date,
-	options: { year?: boolean; month?: boolean; day?: boolean; hour?: boolean; minute?: boolean },
+	options: {
+		year?: boolean;
+		month?: boolean;
+		day?: boolean;
+		hour?: boolean;
+		minute?: boolean;
+	},
 ) {
 	const formatOptions: Intl.DateTimeFormatOptions = {
 		timeZone: TZ,
@@ -23,7 +29,11 @@ function getParts(
 }
 
 export function formatDateToYYYYMMDD(date: Date): string {
-	const { year, month, day } = getParts(date, { year: true, month: true, day: true });
+	const { year, month, day } = getParts(date, {
+		year: true,
+		month: true,
+		day: true,
+	});
 	return `${year}-${month}-${day}`;
 }
 
@@ -45,7 +55,9 @@ export function formatDateTime(date: Date): string {
 
 export function getYearInTimeZone(date: Date, timeZone = TZ): number {
 	return Number.parseInt(
-		new Intl.DateTimeFormat("en-US", { timeZone, year: "numeric" }).format(date),
+		new Intl.DateTimeFormat("en-US", { timeZone, year: "numeric" }).format(
+			date,
+		),
 		10,
 	);
 }

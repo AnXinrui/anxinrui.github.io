@@ -9,7 +9,9 @@ const sortedPostsList = await getSortedPostsList();
 
 const searchParams = Astro.url.searchParams;
 const tags = searchParams.has("tag") ? searchParams.getAll("tag") : [];
-const categories = searchParams.has("category") ? searchParams.getAll("category") : [];
+const categories = searchParams.has("category")
+	? searchParams.getAll("category")
+	: [];
 const uncategorized = searchParams.has("uncategorized");
 ---
 
