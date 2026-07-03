@@ -22,6 +22,7 @@ alwaysApply: true
 | 站点标题/Banner/主题色/导航/头像 | `src/config.ts` |
 | 关于页 | `src/content/spec/about.md` |
 | 博文 | `src/content/posts/` |
+| 碎碎念 | `src/content/moments/` |
 | 界面文案 | `src/i18n/languages/zh_CN.ts` |
 | Banner 高度 | `src/constants/constants.ts`（默认 35vh + 30vh 延展） |
 | 部署 | `.github/workflows/deploy.yml` |
@@ -38,7 +39,8 @@ alwaysApply: true
 ```bash
 pnpm dev          # 本地 http://localhost:4321
 pnpm build        # 构建 + pagefind 索引
-pnpm new-post <名> # 新建文章
+pnpm new-post <名>   # 新建文章
+pnpm new-moment <名> # 新建碎碎念
 ```
 
 ## 协作约定

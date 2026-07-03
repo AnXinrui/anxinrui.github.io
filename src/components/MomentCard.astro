@@ -1,0 +1,53 @@
+---
+import type { CollectionEntry } from "astro:content";
+import path from "node:path";
+import Markdown from "./misc/Markdown.astro";
+import ImageWrapper from "./misc/ImageWrapper.astro";
+import { formatDateTime } from "../utils/date-utils";
+import { getDir } from "../utils/url-utils";
+
+interface Props {
+	entry: CollectionEntry<"moments">;
+	class?: string;
+	style?: string;
+}
+
+const { entry, style } = Astro.props;
+const className = Astro.props.class;
+
+const { Content } = await entry.render();
+const images = entry.data.images ?? [];
+const imageBasePath = path.join("content/moments/", getDir(entry.id));
+---
+
+<article class:list={["card-base px-6 py-5 md:px-8 md:py-6", className]} style={style}>
+	<time class="text-sm text-50 mb-3 block" datetime={entry.data.published.toISOString()}>
+		{formatDateTime(entry.data.published)}
+	</time>
+
+	<Markdown class="mb-4 markdown-content">
+		<Content />
+	</Markdown>
+
+	{images.length > 0 && (
+		<div
+			class:list={[
+				"moment-gallery grid gap-1.5",
+				images.length === 1 && "grid-cols-1 max-w-[11rem]",
+				images.length === 2 && "grid-cols-2 max-w-[14rem]",
+				images.length >= 3 && "grid-cols-3 max-w-[14rem]",
+			]}
+		>
+			{images.map((src) => (
+				<div class="rounded-lg overflow-hidden aspect-square">
+					<ImageWrapper
+						src={src}
+						basePath={imageBasePath}
+						alt=""
+						class="w-full h-full"
+					/>
+				</div>
+			))}
+		</div>
+	)}
+</article>

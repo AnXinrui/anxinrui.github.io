@@ -112,3 +112,15 @@ export async function getCategoryList(): Promise<Category[]> {
 	}
 	return ret;
 }
+
+export async function getSortedMoments() {
+	const allMoments = await getCollection("moments", ({ data }) => {
+		return import.meta.env.PROD ? data.draft !== true : true;
+	});
+
+	return allMoments.sort((a, b) => {
+		const dateA = new Date(a.data.published);
+		const dateB = new Date(b.data.published);
+		return dateA > dateB ? -1 : 1;
+	});
+}
