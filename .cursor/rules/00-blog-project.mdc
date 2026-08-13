@@ -30,7 +30,7 @@ alwaysApply: true
 
 ## 当前状态（有变请同步更新本规则）
 
-- 博文：仅 `src/content/posts/fuwari-guide.md`
+- 博文：`fuwari-guide.md`、`java-deadlock/`
 - Banner：已启用，`neo-tokyo-noir-banner.webp`，`position: center`，hue `210`
 - 作者：xinrui.an，GitHub `anxinrui`
 
