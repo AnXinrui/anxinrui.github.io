@@ -2,8 +2,6 @@
 import Pagination from "@components/control/Pagination.astro";
 import MomentPage from "@components/MomentPage.astro";
 import { MOMENT_PAGE_SIZE } from "@constants/constants";
-import I18nKey from "@i18n/i18nKey";
-import { i18n } from "@i18n/translation";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { getSortedMoments } from "@utils/content-utils";
 import type { GetStaticPaths } from "astro";
@@ -17,7 +15,7 @@ const { page } = Astro.props;
 const len = page.data.length;
 ---
 
-<MainGridLayout title={i18n(I18nKey.moments)}>
+<MainGridLayout title="碎碎念">
 	<MomentPage page={page} />
 	<Pagination
 		class="mx-auto onload-animation"

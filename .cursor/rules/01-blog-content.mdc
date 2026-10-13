@@ -1,6 +1,6 @@
 ---
 description: 博文与内容编辑约定
-globs: src/content/**,src/config.ts,src/i18n/**
+globs: src/content/**,src/config.ts
 alwaysApply: false
 ---
 
@@ -70,4 +70,4 @@ pnpm encrypt-moments
 
 - 分类/标签用中文，与侧边栏筛选一致
 - 图片放 `src/assets/images/` 或文章同目录；Banner 图在 `config.ts` 配置
-- 改 UI 固定文案优先改 `zh_CN.ts`，不要硬编码英文
+- i18n 已移除：UI 文案为硬编码中文，直接改对应组件，不要引入英文

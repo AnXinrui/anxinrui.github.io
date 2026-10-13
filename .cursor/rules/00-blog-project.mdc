@@ -23,7 +23,7 @@ alwaysApply: true
 | 关于页 | `src/content/spec/about.md` |
 | 博文 | `src/content/posts/` |
 | 碎碎念 | `src/content/moments/` |
-| 界面文案 | `src/i18n/languages/zh_CN.ts` |
+| 界面文案 | 已去除 i18n，中文直接写在各组件里 |
 | Banner 高度 | `src/constants/constants.ts`（默认 35vh + 30vh 延展） |
 | 部署 | `.github/workflows/deploy.yml` |
 | 站点 URL | `astro.config.mjs` → `site` / `base: "/"` |
