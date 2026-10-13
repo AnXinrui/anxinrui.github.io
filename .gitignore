@@ -6,8 +6,11 @@ dist/
 
 # dependencies
 node_modules/
+.pnpm-store/
 
 # logs
+logs/
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -15,17 +18,58 @@ pnpm-debug.log*
 
 # environment variables
 .env
-.env.production
+.env.*
+!.env.example
 
-# macOS-specific files
-.DS_Store
+# private plaintext of encrypted moments (加密碎碎念的明文源，禁止入库)
+private/
 
-.vercel
+# typescript incremental build info
+*.tsbuildinfo
 
+# test coverage
+coverage/
+
+# lock files of other package managers (本项目使用 pnpm，保留 pnpm-lock.yaml)
 package-lock.json
+bun.lock
 bun.lockb
 yarn.lock
 
+# deploy platforms
+.vercel
+.wrangler/
+
+# macOS-specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.Trashes
+
+# Windows-specific files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
 # ide
-.idea
+.idea/
 *.iml
+*.ipr
+*.iws
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
+
+# editor temp & backup files
+*~
+*.bak
+*.tmp
+*.swp

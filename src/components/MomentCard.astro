@@ -5,6 +5,7 @@ import { formatDateTime } from "../utils/date-utils";
 import { getDir } from "../utils/url-utils";
 import ImageWrapper from "./misc/ImageWrapper.astro";
 import Markdown from "./misc/Markdown.astro";
+import SecretMomentCard from "./SecretMomentCard.svelte";
 
 interface Props {
 	entry: CollectionEntry<"moments">;
@@ -15,9 +16,13 @@ interface Props {
 const { entry, style } = Astro.props;
 const className = Astro.props.class;
 
-const { Content } = await entry.render();
-const images = entry.data.images ?? [];
+const isSecret = entry.data.secret === true;
+const images = isSecret ? [] : (entry.data.images ?? []);
 const imageBasePath = path.join("content/moments/", getDir(entry.id));
+
+// 加密条目不在服务端渲染 Markdown，密文直接交给客户端组件解密
+const content = isSecret ? (entry.body ?? "").trim() : null;
+const { Content } = await entry.render();
 ---
 
 <article class:list={["card-base px-6 py-5 md:px-8 md:py-6", className]} style={style}>
@@ -25,9 +30,17 @@ const imageBasePath = path.join("content/moments/", getDir(entry.id));
 		{formatDateTime(entry.data.published)}
 	</time>
 
-	<Markdown class="mb-4 markdown-content">
-		<Content />
-	</Markdown>
+	{isSecret ? (
+		content && content.length > 0 ? (
+			<SecretMomentCard client:only="svelte" ciphertext={content} />
+		) : (
+			<p class="text-50 text-sm mb-4">这条碎碎念的密文缺失，请重新运行 pnpm encrypt-moments</p>
+		)
+	) : (
+		<Markdown class="mb-4 markdown-content">
+			<Content />
+		</Markdown>
+	)}
 
 	{images.length > 0 && (
 		<div

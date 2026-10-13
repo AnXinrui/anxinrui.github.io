@@ -24,6 +24,7 @@ const momentsCollection = defineCollection({
 		published: z.date(),
 		images: z.array(z.string()).optional().default([]),
 		draft: z.boolean().optional().default(false),
+		secret: z.boolean().optional().default(false),
 	}),
 });
 const specCollection = defineCollection({

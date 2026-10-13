@@ -36,6 +36,36 @@ draft: false         # true 不公开
 - 代码块：Expressive Code（`title=`、`del={}`、`ins={}`、`showLineNumbers` 等）
 - 视频：直接粘贴 `<iframe>` 到正文
 
+## 私密碎碎念（加密）
+
+发布前在本地用 AES-256-GCM 加密，仓库与页面只存密文；访客输入密码后在浏览器端解密，解锁一次全部可见（localStorage 记住）。
+
+### 首次设置
+
+1. 项目根目录创建 `.env`（已被 gitignore，不会入库）：
+
+   ```bash
+   MOMENT_PASSWORD=你的密码
+   ```
+
+2. 密码要设强一点：仓库是公开的，密文人人可见，静态站点无法阻止离线暴力破解。
+
+### 写作与发布
+
+```bash
+# 新建私密碎碎念（明文落在 private/moments/，不入库）
+pnpm new-moment my-secret --secret
+
+# 编辑 private/moments/my-secret/index.md（支持正常 Markdown 与 images 引用本目录图片）
+
+# 加密并发布：密文写入 src/content/moments/my-secret/index.md
+pnpm encrypt-moments
+```
+
+- `private/moments/` 已在 .gitignore，明文永不入库；发布流程：先 `pnpm encrypt-moments` 再 commit 公开目录密文
+- 前端渲染用 markdown-it（`breaks: true`），单换行即生效，与公开碎碎念的空行分段行为不同
+- 改密码后：旧密文解不开，需把公开目录里旧 secret 条目删掉后重跑 `pnpm encrypt-moments`
+
 ## 注意
 
 - 分类/标签用中文，与侧边栏筛选一致

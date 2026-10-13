@@ -24,14 +24,17 @@ function getShanghaiDateTimeISO(date = new Date()) {
 }
 
 const args = process.argv.slice(2)
+const isSecret = args.includes("--secret")
+const positional = args.filter((arg) => arg !== "--secret")
 
-if (args.length === 0) {
+if (positional.length === 0) {
   console.error(`Error: No filename argument provided
-Usage: pnpm new-moment <name>`)
+Usage: pnpm new-moment <name> [--secret]
+  --secret  创建私密碎碎念到 private/moments/，需运行 pnpm encrypt-moments 加密后发布`)
   process.exit(1)
 }
 
-let inputName = args[0].replace(/\\/g, "/").replace(/\/$/, "")
+let inputName = positional[0].replace(/\\/g, "/").replace(/\/$/, "")
 
 // 支持显式传 index：2026-07-03-moment/index
 if (inputName.endsWith("/index")) {
@@ -41,7 +44,7 @@ if (inputName.endsWith("/index")) {
 // 去掉 .md / .mdx 后缀，统一用目录名
 inputName = inputName.replace(/\.(md|mdx)$/i, "")
 
-const targetDir = "./src/content/moments/"
+const targetDir = isSecret ? "./private/moments/" : "./src/content/moments/"
 const momentDir = path.join(targetDir, inputName)
 const fullPath = path.join(momentDir, "index.md")
 const legacyPath = path.join(targetDir, `${inputName}.md`)
@@ -74,3 +77,6 @@ draft: false
 fs.writeFileSync(fullPath, content)
 
 console.log(`Moment ${fullPath} created`)
+if (isSecret) {
+  console.log(`This is a secret moment. Write your plaintext here, then run \`pnpm encrypt-moments\` to publish it encrypted.`)
+}

@@ -12,6 +12,7 @@
     "type-check": "tsc --noEmit --isolatedDeclarations",
     "new-post": "node scripts/new-post.js",
     "new-moment": "node scripts/new-moment.js",
+    "encrypt-moments": "node scripts/encrypt-moment.js",
     "format": "biome format --write ./src",
     "lint": "biome check --write ./src",
     "preinstall": "npx only-allow pnpm"
